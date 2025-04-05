@@ -8,12 +8,27 @@
 </head>
 <body>
     <div class="container">
-    <h1 class="main-heading" >To-do list </h1>
+        <div>
+            <img src="images/icons8-edit-property-100.png" alt="">
+                <h1 class="main-heading" >To-do list </h1>
     
-    <div class="headings-div" >  
-        <h2 class="box-heading" > To-do tasks:</h2>
-        <h2  class="box-heading" > Tasks in progress:</h2> 
-        <h2 class="box-heading" > Completed:</h2> </div>
+            </div>
+
+    <div class="headings-div" > 
+        <div class="first-heading" > 
+            <img height="25px" src="images/icons8-edit-document-24.png" alt="">
+        <h2 class="box-heading" > To-do:</h2>
+    </div>
+    <div class="second-heading">
+        <img height="25px"
+         src="images/icons8-in-progress-64.png" alt="">
+        <h2  class="box-heading" >  In progress:</h2> 
+    </div>
+    <div class="third-heading">
+        <img height="30px" src="images/icons8-task-completed-100.png" alt="">
+        <h2 class="box-heading" > Completed:</h2>
+    </div> </div>
+
     <div class="boxes">
 
         <!-- <div class="box"> -->
@@ -29,11 +44,15 @@
   
         <!-- <input type="text"> -->
 
-        <h4>Task todo 1</h4>
+        <input width="" type="text" id="first-input" value="Learn what Javascript is " disabled >
 
     <div class="imgs">
 
-        <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt="">
+        <button class="editbutton"
+         id="editButton" > Edit</button>
+
+        <!-- <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt=""> -->
+     
 
 <button onclick="deletetask1()" >
     <img width="30px" height="30px" src="images/icons8-delete-100.png" alt="">
@@ -46,13 +65,14 @@
         ondragstart="dragStart(event)"
         ondrag="dragging(event)"
         class="task-todo" id="dragtarget2" draggable="true" >
-        <h4>
-        Task todo 2
-    </h4>
+        <input type="text" id="2nd-input-field" value="Understand how to include js in an HTML file" disabled >
 
 <div class="imgs">
-    <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt="">
 
+    <button class="editbutton" id="editbutton" > Edit</button>
+
+    <!-- <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt="">
+ -->
 
 <button onclick="deletetask2()">    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
 
@@ -65,12 +85,11 @@
         ondragstart="dragStart(event)"
         ondrag="dragging(event)"
         class="task-todo" id="dragtarget3" draggable="true" >
-        <h4>
-        Task todo 3
-    </h4>
+        <input type="text" id="editinput" value="Learn about variables" disabled >
 
     <div class="imgs">
-        <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt="">
+        <button class="editbutton"  id="edittask" >Edit</button>
+        <!-- <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt=""> -->
 
 
     <button onclick="deleteitem()" >    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
@@ -92,12 +111,12 @@
         ondragstart="dragStart(event)"
         ondrag="dragging(event)"
         class="task-todo" id="dragtarget4" draggable="true" >
-        <h4>
-        In progress 1
-    </h4>
+        <input type="text" id="editablefirstprogess" value="Practice using if & else statements" disabled >
 
 <div class="imgs">
-    <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt="">
+    <button class="editbutton" id="editprogress1" >Edit</button>
+
+    <!-- <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt=""> -->
 
 <button onclick="deleteprogress1()" >    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
 </div>
@@ -107,12 +126,13 @@
         ondragstart="dragStart(event)"
         ondrag="dragging(event)"
         class="task-todo" id="dragtarget5" draggable="true">
-        <h4>
-        In progress 2
-    </h4>
+        <input type="text" id="editablesecondprogess" value="Learn how to write and call a function" disabled >
 
     <div class="imgs">
-        <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt="">
+
+        <button class="editbutton" id="editprogress2" >Edit</button>
+
+        <!-- <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt=""> -->
     <button onclick="deleteprogress2()" >     <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
 
 </div>
@@ -123,11 +143,12 @@
         ondragstart="dragStart(event)"
         ondrag="dragging(event)"
         class="task-todo" id="dragtarget6" draggable="true">
-        <h4>
-        In progress 3
-    </h4>
+        <input type="text" id="editablethirdprogess" value="Try using for & while loops" disabled >
 <div class="imgs">
-    <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt="">
+
+    <button class="editbutton" id="editprogress3" >Edit</button>
+
+    <!-- <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt=""> -->
     <button onclick="deleteprogress3()" >    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
 
 </div>
@@ -149,12 +170,12 @@
         ondragstart="dragStart(event)"
         ondrag="dragging(event)"
         class="task-todo" id="dragtarget7" draggable="true" >
-        <h4>
-        Completed task 1
-    </h4>
+        <input type="text" id="editableone" value="Installed a code editor(like VS Code)" disabled >
 
     <div class="imgs">
-        <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt="">
+        <button class="editbutton" id="editcompleted1" >Edit</button>
+
+        <!-- <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt=""> -->
 <button onclick="completed1()" >    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
 
 </div>
@@ -164,12 +185,12 @@
         ondragstart="dragStart(event)"
         ondrag="dragging(event)"
         class="task-todo" id="dragtarget8" draggable="true">
-        <h4>
-        Completed task 2
-    </h4>
+        <input type="text" id="editabletwo" value="Opened the browser console and typed javascript" disabled >
 
     <div class="imgs">
-        <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt="">
+        <button class="editbutton" id="editcompleted2" >Edit</button>
+
+        <!-- <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt=""> -->
 <button onclick="deletecompletedtask()">    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
 </div>
 
@@ -180,15 +201,13 @@
         ondragstart="dragStart(event)"
         ondrag="dragging(event)"
         class="task-todo" id="dragtarget9" draggable="true">
-        
-        <h4>
-        Completed task 3
-    </h4>
-
+        <input type="text" id="editablethree" value="Watched a beginner javascript tutorial(eg.., on Yuotube)" disabled >
     <div>
 
         <div class="imgs">
-            <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt="">
+            <button class="editbutton" id="editcompleted3">Edit</button>
+
+            <!-- <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt=""> -->
 <button onclick="deleterow()" >    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
 </div>
 

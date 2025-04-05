@@ -1,7 +1,15 @@
+
+body{
+    background-color: rgba(107, 129, 111, 0.11);
+}
+
+
 .main-heading{
 font-family: 'Courier New', Courier, monospace;    
 font-size:40px;
 color: rgb(236, 182, 101);
+margin: 0;
+padding-bottom: 17px;
 }
 .container{
     justify-self:center ;
@@ -16,9 +24,10 @@ color: rgb(236, 182, 101);
 }
 
 .droptarget{
-    border: 2px dotted black;
-    width: 250px;
+    border: 2px solid rgba(99, 99, 99, 0.459);
+    width: fit-content;
     height: 400px;
+    padding:2px ;
     border-radius: 10px;
 }
 
@@ -42,7 +51,7 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 padding-left: 10px;
-padding-right: 10px;
+padding-right: 4px;
 }
 
 
@@ -92,4 +101,52 @@ button{
 .imgs{
     display: flex;
     align-items:center ;
+}
+
+
+input{
+    outline: none;
+    border: 0;
+    font-size: 14px;
+    font-weight: 500;
+padding: 0;
+}
+
+button{
+    cursor: pointer;
+}
+
+.editbutton{
+font-family: sans-serif;
+font-weight: 600;
+    border: 1px solid black;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 3px; 
+    padding-bottom: 3px; 
+    border-radius: 20px ;
+    background-color: rgba(94, 95, 95, 0.253);
+
+
+}
+
+.editbutton:hover{
+    background-color: rgba(94, 95, 95, 0.548);
+
+}
+
+.first-heading{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.second-heading{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.third-heading{
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
