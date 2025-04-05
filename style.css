@@ -1,0 +1,95 @@
+.main-heading{
+font-family: 'Courier New', Courier, monospace;    
+font-size:40px;
+color: rgb(236, 182, 101);
+}
+.container{
+    justify-self:center ;
+    text-align: center;
+}
+
+
+
+.boxes{
+    display: flex; 
+    gap: 20px;
+}
+
+.droptarget{
+    border: 2px dotted black;
+    width: 250px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+.box-heading{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+    /* border-bottom: 1px solid black; */
+}
+
+h4{
+    margin: 0;
+}
+
+.task-todo{
+    margin-top: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+border:1px solid black ;
+display: flex; 
+align-items: center;
+justify-content: space-between;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+
+.progressing-tasks{
+    margin-top: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+border:1px solid black ;
+}
+
+
+
+
+.completed-task{
+    margin-top: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+border:1px solid black ;
+}
+.headings-div{
+    display: flex;
+    gap: 130px;
+    text-align: center;
+    justify-self: center;
+    justify-items: center;
+
+}
+
+
+
+.box-heading{
+font-family: 'Courier New', Courier, monospace;
+color: rgb(80, 83, 82);
+}
+
+
+img{
+    cursor: pointer;
+}
+button{
+    background: none;
+    border: none;
+    margin-top: 0;
+    padding: 0;
+}
+
+.imgs{
+    display: flex;
+    align-items:center ;
+}
