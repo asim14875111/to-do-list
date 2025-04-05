@@ -64,7 +64,7 @@ border:1px solid black ;
 }
 .headings-div{
     display: flex;
-    gap: 130px;
+    gap: 80px;
     text-align: center;
     justify-self: center;
     justify-items: center;
