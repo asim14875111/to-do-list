@@ -7,12 +7,50 @@
     <title>Document</title>
 </head>
 <body>
+
+ 
+<div class="modal" id="modal">
+    <div class="modal-inner">
+
+        
+        <form autocomplete="off" action="" id="loginform" onsubmit="return addEntry(event)">
+
+               
+            <div class="input-div"> <input type="text" name="" id="add-entry" placeholder="Add new entry" required >
+             
+             <!-- <div class="add-button"> -->
+          
+             <!-- </div> -->
+         </div>
+         <div class="buttons-div">
+            <button id="closeModal">Cancel</button>
+            <button type="submit" onclick="displayEntries()" id="updatebutton">Add  Entry</button>
+      
+           </div>
+   
+                 </form>
+              
+    </div>
+</div>
+  
+
+
+    
     <div class="container">
         <div>
             <img src="images/icons8-edit-property-100.png" alt="">
                 <h1 class="main-heading" >To-do list </h1>
     
             </div>
+
+            <button id="openModal">
+                Add new task
+            <img src="images/icons8-add-24.png" alt="">
+            </button>
+
+
+                
+      
 
     <div class="headings-div" > 
         <div class="first-heading" > 
@@ -39,17 +77,18 @@
     
         <div 
         ondragstart="dragStart(event)"
-        ondrag="dragging(event)"
         class="task-todo" id="dragtarget" draggable="true" >
   
         <!-- <input type="text"> -->
 
-        <input width="" type="text" id="first-input" value="Learn what Javascript is " disabled >
+        <input width="" type="text" id="first-input" value="Review designs" disabled >
 
     <div class="imgs">
 
-        <button class="editbutton"
+      
+         <button   class="editbutton"
          id="editButton" > Edit</button>
+
 
         <!-- <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt=""> -->
      
@@ -63,9 +102,8 @@
     </div>
         <div 
         ondragstart="dragStart(event)"
-        ondrag="dragging(event)"
         class="task-todo" id="dragtarget2" draggable="true" >
-        <input type="text" id="2nd-input-field" value="Understand how to include js in an HTML file" disabled >
+        <input type="text" id="2nd-input-field" value="Css styling" disabled >
 
 <div class="imgs">
 
@@ -73,6 +111,7 @@
 
     <!-- <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt="">
  -->
+
 
 <button onclick="deletetask2()">    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
 
@@ -83,20 +122,40 @@
      
         <div 
         ondragstart="dragStart(event)"
-        ondrag="dragging(event)"
         class="task-todo" id="dragtarget3" draggable="true" >
-        <input type="text" id="editinput" value="Learn about variables" disabled >
+        <input type="text" id="editinput" value="Javascript validations" disabled >
 
     <div class="imgs">
         <button class="editbutton"  id="edittask" >Edit</button>
         <!-- <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt=""> -->
 
 
-    <button onclick="deleteitem()" >    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
+    <button onclick="deleteitem3()" >    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
 </div>
 
+</div>
+   
+     <table>
+   <thead>
+    <tr id="added-tasks" >
+<td></td>
+<td></td>
+<td></td>
 
-     </div>
+    </tr>
+   </thead>
+
+
+        <tbody id="new-entries" >
+            <tr  ondrop="drop(event)" ondragover="allowDrop(event)" id="row1">
+                <td></td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+
      
 
     </div>
@@ -109,9 +168,8 @@
  
 <div
         ondragstart="dragStart(event)"
-        ondrag="dragging(event)"
         class="task-todo" id="dragtarget4" draggable="true" >
-        <input type="text" id="editablefirstprogess" value="Practice using if & else statements" disabled >
+        <input type="text" id="editablefirstprogess" value="Code refactoring" disabled >
 
 <div class="imgs">
     <button class="editbutton" id="editprogress1" >Edit</button>
@@ -124,9 +182,8 @@
     </div>
         <div 
         ondragstart="dragStart(event)"
-        ondrag="dragging(event)"
         class="task-todo" id="dragtarget5" draggable="true">
-        <input type="text" id="editablesecondprogess" value="Learn how to write and call a function" disabled >
+        <input type="text" id="editablesecondprogess" value="UI redesign" disabled >
 
     <div class="imgs">
 
@@ -141,9 +198,8 @@
      
         <div 
         ondragstart="dragStart(event)"
-        ondrag="dragging(event)"
         class="task-todo" id="dragtarget6" draggable="true">
-        <input type="text" id="editablethirdprogess" value="Try using for & while loops" disabled >
+        <input type="text" id="editablethirdprogess" value="Bug fixing" disabled >
 <div class="imgs">
 
     <button class="editbutton" id="editprogress3" >Edit</button>
@@ -168,9 +224,8 @@
      
         <div
         ondragstart="dragStart(event)"
-        ondrag="dragging(event)"
         class="task-todo" id="dragtarget7" draggable="true" >
-        <input type="text" id="editableone" value="Installed a code editor(like VS Code)" disabled >
+        <input type="text" id="editableone" value="Server setup" disabled >
 
     <div class="imgs">
         <button class="editbutton" id="editcompleted1" >Edit</button>
@@ -183,9 +238,8 @@
     </div>
         <div 
         ondragstart="dragStart(event)"
-        ondrag="dragging(event)"
         class="task-todo" id="dragtarget8" draggable="true">
-        <input type="text" id="editabletwo" value="Opened the browser console and typed javascript" disabled >
+        <input type="text" id="editabletwo" value="Database config" disabled >
 
     <div class="imgs">
         <button class="editbutton" id="editcompleted2" >Edit</button>
@@ -199,9 +253,8 @@
      
         <div 
         ondragstart="dragStart(event)"
-        ondrag="dragging(event)"
         class="task-todo" id="dragtarget9" draggable="true">
-        <input type="text" id="editablethree" value="Watched a beginner javascript tutorial(eg.., on Yuotube)" disabled >
+        <input type="text" id="editablethree" value="Meta tags added" disabled >
     <div>
 
         <div class="imgs">
@@ -221,8 +274,7 @@
 </div>
 
 
-
-
+   
 <script src="script.js" ></script>
 </body>
 </html>
