@@ -206,35 +206,37 @@ secondinputfield.disabled = !secondinputfield.disabled;
 
   item.remove()
 }
-function dragStart(event) {
-  // Storring data which is being dragged & holding the data 
-  event.dataTransfer.setData("Text", event.target.id);
-}
+
+
+// function dragStart(event) {
+//   // Storring data which is being dragged & holding the data 
+//   event.dataTransfer.setData("Text", event.target.id);
+// }
 
 
 
-//   Function to drop selected element
+// //   Function to drop selected element
 
-function drop(event) {
-// Getting data from the function drag start where we set the data by targetting id
+// function drop(event) {
+// // Getting data from the function drag start where we set the data by targetting id
 
-  const data = event.dataTransfer.getData("Text");
+//   const data = event.dataTransfer.getData("Text");
 
-  // Adding appendchild to drop element at target position
-  event.target.appendChild(document.getElementById(data))
-}
-
-
-//  Function to allow element to be dropped
+//   // Adding appendchild to drop element at target position
+//   event.target.appendChild(document.getElementById(data))
+// }
 
 
-function allowDrop(event) {
-  // stops the element at the position where you want to drop it.
-  event.preventDefault();}
+// //  Function to allow element to be dropped
+
+
+// function allowDrop(event) {
+//   // stops the element at the position where you want to drop it.
+//   event.preventDefault();}
 
   
 
-  // Functions to delete rows
+//   // Functions to delete rows
 
 
 
@@ -309,7 +311,12 @@ function displayEntries(){
 `;
     tbody.appendChild(row)
   })
+
+
+  
+
 }
+
 
 
 
@@ -343,5 +350,117 @@ openinp.addEventListener("click",() =>{
 
 }
 
-// openinput
+const dropItems = document.getElementById('box-1')
+const dropitem = document.getElementById('box-2')
+const dropitem3 = document.getElementById('box-3')
 
+new Sortable(dropItems,{
+  animation: 350,
+ 
+})
+new Sortable(dropitem,{
+  animation: 380,
+
+})
+new Sortable(dropitem3,{
+  animation: 370,
+
+})
+
+
+
+// Drag and drop function starts
+
+let lists = document.getElementsByClassName("task-todo");
+let rightbox = document.getElementById("box-1")
+let leftbox = document.getElementById("left")
+
+
+for(list of lists){
+  list.addEventListener("dragstart",function(e){
+    let selected = e.target;
+
+rightbox.addEventListener("dragover", function(e){
+  e.preventDefault();
+})
+
+rightbox.addEventListener("drop", function(e){
+
+  rightbox.appendChild(selected);
+  selected = null
+})
+
+
+
+  })
+}
+
+
+let box2 = document.getElementById("box-2")
+
+
+
+for(list of lists){
+  list.addEventListener("dragstart",function(e){
+    let selected = e.target;
+
+    box2.addEventListener("dragover", function(e){
+  e.preventDefault();
+})
+
+box2.addEventListener("drop", function(e){
+
+  box2.appendChild(selected);
+  selected = null
+})
+
+
+
+  })
+}
+
+
+
+let box3 = document.getElementById("box-3")
+
+
+for(list of lists){
+  list.addEventListener("dragstart",function(e){
+    let selected = e.target;
+
+    box3.addEventListener("dragover", function(e){
+  e.preventDefault();
+})
+
+box3.addEventListener("drop", function(e){
+
+  box3.appendChild(selected);
+  selected = null
+})
+
+
+
+  })
+}
+
+let row1 = document.getElementById("row1")
+
+
+// row1
+
+for(list of lists){
+  list.addEventListener("dragstart",function(e){
+    let selected = e.target;
+
+    row1.addEventListener("dragover", function(e){
+  e.preventDefault();
+})
+
+row1.addEventListener("drop", function(e){
+
+  row1.appendChild(selected);
+  selected = null
+})
+
+  })
+}

@@ -55,7 +55,7 @@ align-items: center;
 justify-content: space-between;
 padding-left: 10px;
 padding-right: 4px;
-/* cursor: grab; */
+cursor: all-scroll;
 }
 
 
@@ -331,4 +331,25 @@ justify-self: center;
     display: flex;
     flex-direction: column;
     gap: 200px;
+}
+
+
+
+.container2{
+    display: flex;
+    gap: 10px;
+}
+
+#left
+{
+    border: 1px solid black;
+width: fit-content;
+
+}
+
+#right
+{
+    border: 1px solid black;
+
+width: 50px;
 }

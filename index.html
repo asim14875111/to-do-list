@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+     
 <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -75,12 +76,11 @@
 
         <!-- <div class="box"> -->
                       
-        <div ondrop="drop(event)" ondragover="allowDrop(event)" id="box-1" class="droptarget">
+        <div  id="box-1" class="droptarget">
 
      
     
         <div 
-        ondragstart="dragStart(event)"
         class="task-todo" id="dragtarget" draggable="true" >
   
         <!-- <input type="text"> -->
@@ -105,9 +105,8 @@
 
     </div>
         <div 
-        ondragstart="dragStart(event)"
         class="task-todo" id="dragtarget2" draggable="true" >
-        <input type="text" id="2nd-input-field" value="Css styling" disabled >
+        <input  type="text" id="2nd-input-field" value="Css styling" disabled >
 
 <div class="imgs">
 
@@ -125,7 +124,6 @@
   
      
         <div 
-        ondragstart="dragStart(event)"
         class="task-todo" id="dragtarget3" draggable="true" >
         <input type="text" id="editinput" value="Javascript validations" disabled >
 
@@ -140,19 +138,16 @@
 </div>
    
      <table>
-   <thead>
+   <thead id="added-entries" >
     <tr  id="added-tasks" >
 <td></td>
-<div>
-<td></td>
-<td></td>
-</div>
+
     </tr>
    </thead>
 
 
         <tbody  id="new-entries" >
-            <tr  ondrop="drop(event)" ondragover="allowDrop(event)" id="row1">
+            <tr draggable="true" id="row1">
 
                 <td></td>
             </tr>
@@ -169,8 +164,7 @@
 
 <!-- <div class="box"> -->
          
-    <div ondrop="drop(event)" 
-    ondragover="allowDrop(event)" id="box-2" class="droptarget">
+    <div  id="box-2" class="droptarget">
  
 <div
         ondragstart="dragStart(event)"
@@ -187,7 +181,6 @@
 
     </div>
         <div 
-        ondragstart="dragStart(event)"
         class="task-todo" id="dragtarget5" draggable="true">
         <input type="text" id="editablesecondprogess" value="UI redesign" disabled >
 
@@ -203,7 +196,6 @@
   
      
         <div 
-        ondragstart="dragStart(event)"
         class="task-todo" id="dragtarget6" draggable="true">
         <input type="text" id="editablethirdprogess" value="Bug fixing" disabled >
 <div class="imgs">
@@ -224,12 +216,10 @@
 <!-- </div> -->
     <!-- <div class="box" > -->
         
-    <div ondrop="drop(event)" 
-    ondragover="allowDrop(event)" id="box-3" class="droptarget">
+    <div  id="box-3" class="droptarget">
     
      
         <div
-        ondragstart="dragStart(event)"
         class="task-todo" id="dragtarget7" draggable="true" >
         <input type="text" id="editableone" value="Server setup" disabled >
 
@@ -243,7 +233,6 @@
 
     </div>
         <div 
-        ondragstart="dragStart(event)"
         class="task-todo" id="dragtarget8" draggable="true">
         <input type="text" id="editabletwo" value="Database config" disabled >
 
@@ -258,7 +247,6 @@
   
      
         <div 
-        ondragstart="dragStart(event)"
         class="task-todo" id="dragtarget9" draggable="true">
         <input type="text" id="editablethree" value="Meta tags added" disabled >
     <div>
@@ -278,9 +266,7 @@
 </div>
 
 </div>
-
-
-   
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 <script src="script.js" ></script>
 </body>
 </html>
