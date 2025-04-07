@@ -239,7 +239,7 @@ color: white;
     margin-bottom: 20px;
     border-radius: 5px;
     border: 1px solid black;
-
+margin-top: 10px;
 }
 
 
@@ -280,13 +280,9 @@ color: white;
 
 
  #closeModal{
-    border: 1px solid black;
-    background:rgb(185, 41, 41);
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 50px;
-    color: white;
-    font-size: 15px;
+position: absolute;
+right: 470px;
+top: 262px;  
 }
 
 
@@ -324,4 +320,15 @@ justify-self: center;
 #box-3{
     /* padding-top: 5px; */
     padding-bottom: 10px;
+}
+
+.new-entries tr{
+    display: flex;
+    flex-direction:column ;
+}
+
+.new-data{
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
 }

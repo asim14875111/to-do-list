@@ -262,6 +262,12 @@ cancel.addEventListener("click",() =>{
 let data =[]
 currentEditIndex = null
 
+function cancelentries(){
+ 
+
+  loginform.reset()
+}
+
 function addEntry(){
   const newentry = document.getElementById('add-entry').value
 const entry = {
@@ -295,9 +301,12 @@ function displayEntries(){
     const row = document.createElement("tr")
     row.innerHTML = `
     <td class="row2">${entry.newentry}<td>
+  
     <td class="row2"  onclick="edititem(${index})" >
  <img id="openinput" width="23px" height="20px"  src="images/icons8-edit-document-24.png" alt=""><td>
-    <td class="row2 deleteentry" onclick="deleteitem(${index})">  <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""><td>`;
+    <td class="row2 deleteentry" onclick="deleteitem(${index})">  <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""><td>
+     
+`;
     tbody.appendChild(row)
   })
 }
@@ -327,12 +336,12 @@ document.getElementById('add-entry').value = entry.newentry;
 currentEditIndex = index
 updatebutton.innerHTML = "save"
 
+const openinp = document.getElementById('openinput')
+
+openinp.addEventListener("click",() =>{
+  modal.classList.add("open")})
+
 }
 
 // openinput
 
-const openinp = document.getElementById('openinput')
-
-openinp.addEventListener("click",() =>{
-  modal.classList.add("open")
-})

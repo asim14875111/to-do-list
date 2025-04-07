@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -15,6 +16,9 @@
         
         <form autocomplete="off" action="" id="loginform" onsubmit="return addEntry(event)">
 
+            <p onclick="cancelentries()" id="closeModal">
+                <img  width="20px" src="images/icons8-close-50.png" alt="">
+             </p>
                
             <div class="input-div"> <input type="text" name="" id="add-entry" placeholder="Add new entry" required >
              
@@ -22,8 +26,8 @@
           
              <!-- </div> -->
          </div>
+        
          <div class="buttons-div">
-            <button id="closeModal">Cancel</button>
             <button type="submit" onclick="displayEntries()" id="updatebutton">Add  Entry</button>
       
            </div>
@@ -137,17 +141,19 @@
    
      <table>
    <thead>
-    <tr id="added-tasks" >
+    <tr  id="added-tasks" >
+<td></td>
+<div>
 <td></td>
 <td></td>
-<td></td>
-
+</div>
     </tr>
    </thead>
 
 
-        <tbody id="new-entries" >
+        <tbody  id="new-entries" >
             <tr  ondrop="drop(event)" ondragover="allowDrop(event)" id="row1">
+
                 <td></td>
             </tr>
 
