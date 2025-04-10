@@ -570,8 +570,6 @@ const dropitem = document.querySelector('#box-2')
 const dropitem3 = document.querySelector('#box-3')
 
 
-// Sortable.forEach((sortable,index) => Sortable.setIndex(index))
-
 new Sortable(dropItems,{
   group: "sortable",
 animation: 500,
