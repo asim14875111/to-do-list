@@ -30,6 +30,16 @@ padding-bottom: 17px;
     width: 280px;
     height: fit-content;
     padding:2px ;
+    padding-bottom: 11px;
+    background-color: rgba(38, 126, 185, 0.082);
+    border-radius: 10px;
+}
+.droptarget1{
+    margin-top: 5px;
+    border: 2px solid rgba(99, 99, 99, 0.459);
+    width: 280px;
+    height: fit-content;
+    padding:2px ;
     /* padding-bottom: 10px; */
     background-color: rgba(38, 126, 185, 0.082);
     border-radius: 10px;
@@ -46,7 +56,31 @@ h4{
     margin: 0;
 }
 
-.task-todo{
+.tasktodo{
+    padding-top: 5px;
+    padding-bottom: 5px;
+border-bottom:1px solid black ;
+display: flex; 
+align-items: center;
+justify-content: space-between;
+padding-left: 10px;
+padding-right: 4px;
+cursor: all-scroll;
+}
+
+.tasktodo3{
+    padding-top: 5px;
+    padding-bottom: 5px;
+border-bottom:1px solid black ;
+display: flex; 
+align-items: center;
+justify-content: space-between;
+padding-left: 10px;
+padding-right: 4px;
+cursor: all-scroll;
+}
+
+.tasktodo{
     padding-top: 5px;
     padding-bottom: 5px;
 border-bottom:1px solid black ;
@@ -127,8 +161,9 @@ font-weight: 600;
     border: 1px solid black;
     padding-left: 7px;
     padding-right: 7px;
-    padding-top: 3px; 
-    padding-bottom: 3px; 
+    font-size: 13px;
+    padding-top: 1px; 
+    padding-bottom: 1px; 
     border-radius: 20px ;
     background-color: rgba(94, 95, 95, 0.253);
 
@@ -352,4 +387,105 @@ width: fit-content;
     border: 1px solid black;
 
 width: 50px;
+}
+
+.whiteBox{
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+}
+
+
+input{
+    width: fit-content;
+}
+
+.dragable{
+    display: flex;
+    gap: 10px;
+}
+
+.box{
+    border: 1px solid black;
+    width: 70px;
+    height: 50px;
+}
+
+
+.droptargeet{
+width: 100px;
+height: 35px;
+padding: 10px;
+border: 1px solid black;
+}
+
+
+
+.whiteBox{
+    border: 1px solid black;
+    width: 80px;
+    height: 70px;
+    margin-top: 10px;
+}
+
+
+#first-input{
+    width: 120px;
+}
+
+.secondinp{
+
+    width: 90px;
+
+}
+
+#editinput{
+    width: 165px;
+}
+
+
+#editablefirstprogess{
+width: 130px;
+}
+
+#editablesecondprogess{
+    width: 100px;
+}
+#editablethirdprogess{
+    width: 90px;
+}
+
+
+#editableone{
+    width: 100px;
+}
+
+#editabletwo{
+    width: 125px;
+}
+#editablethree{
+    width: 130px;
+}
+
+.addnewtask{
+    width:185px;
+}
+
+
+#addnewtask{
+
+    /* padding-top: 0; */
+    padding-bottom: 0;
+    padding-left: 17px;
+    /* padding-right: -10px; */
+    /* margin-right: -4px; */
+}
+
+#new-entries{
+    margin: 0;
+}
+
+#editinputbtn0{
+    cursor: pointer;
 }

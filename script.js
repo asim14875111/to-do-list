@@ -1,5 +1,4 @@
 
-
   // Functions to delete rows
   function deletetask1(){
     const row1 = document.getElementById('dragtarget')
@@ -111,79 +110,72 @@ secondinputfield.disabled = !secondinputfield.disabled;
 
           //  5th row
 
-          const editablesecondprogess = document.getElementById('editablesecondprogess');
-          const editprogress2 = document.getElementById('editprogress2');
+ const editablesecondprogess = document.getElementById('editablesecondprogess');
+   const editprogress2 = document.getElementById('editprogress2');
     
-    
-          editprogress2.addEventListener('click', function(){
-            editablesecondprogess.disabled = !editablesecondprogess.disabled;
-                   if(editablesecondprogess.disabled){
-                    editprogress2.textContent = 'edit'
-                   }else{
-                    editprogress2.textContent = "save"
+  editprogress2.addEventListener('click', function(){
+  editablesecondprogess.disabled = !editablesecondprogess.disabled;
+if(editablesecondprogess.disabled){
+  editprogress2.textContent = 'edit'
+   }else{
+  editprogress2.textContent = "save"
                    }
                  })
 
                 //  6th row
 
-                const editablethirdprogess = document.getElementById('editablethirdprogess');
-                const editprogress3 = document.getElementById('editprogress3');
+  const editablethirdprogess = document.getElementById('editablethirdprogess');
+ const editprogress3 = document.getElementById('editprogress3');
           
-          
-                editprogress3.addEventListener('click', function(){
-                  editablethirdprogess.disabled = !editablethirdprogess.disabled;
-                         if(editablethirdprogess.disabled){
-                          editprogress3.textContent = 'edit'
-                         }else{
-                          editprogress3.textContent = "save"
+ editprogress3.addEventListener('click', function(){
+ editablethirdprogess.disabled = !editablethirdprogess.disabled;
+  if(editablethirdprogess.disabled){
+   editprogress3.textContent = 'edit'
+  }else{
+   editprogress3.textContent = "save"
                          }
                        })
     
                       //  7th row
 
-                      const editableone = document.getElementById('editableone');
-                      const editcompleted1 = document.getElementById('editcompleted1');
+ const editableone = document.getElementById('editableone');
+ const editcompleted1 = document.getElementById('editcompleted1');
                 
-                
-                      editcompleted1.addEventListener('click', function(){
-                        editableone.disabled = !editableone.disabled;
-                               if(editableone.disabled){
-                                editcompleted1.textContent = 'edit'
-                               }else{
-                                editcompleted1.textContent = "save"
-                               }
-                             })
+ editcompleted1.addEventListener('click', function(){
+  editableone.disabled = !editableone.disabled;
+    if(editableone.disabled){
+    editcompleted1.textContent = 'Edit'
+   }else{
+ editcompleted1.textContent = "save"
+ }
+   })
           
                             //  8th row
 
 
-                            const editabletwo = document.getElementById('editabletwo');
-                            const editcompleted2 = document.getElementById('editcompleted2');
+ const editabletwo = document.getElementById('editabletwo');
+  const editcompleted2 = document.getElementById('editcompleted2');
                       
-                      
-                            editcompleted2.addEventListener('click', function(){
-                              editabletwo.disabled = !editabletwo.disabled;
-                                     if(editabletwo.disabled){
-                                      editcompleted2.textContent = 'edit'
-                                     }else{
-                                      editcompleted2.textContent = "save"
-                                     }
-                                   })
+ editcompleted2.addEventListener('click', function(){
+  editabletwo.disabled = !editabletwo.disabled;
+ if(editabletwo.disabled){
+    editcompleted2.textContent = 'edit'
+    }else{
+   editcompleted2.textContent = "save"
+ }
+ })
                 
                                   //  9th row 
-
-                                  const editablethree = document.getElementById('editablethree');
-                                  const editcompleted3 = document.getElementById('editcompleted3');
-                            
-                            
-                                  editcompleted3.addEventListener('click', function(){
-                                    editablethree.disabled = !editablethree.disabled;
-                                           if(editablethree.disabled){
-                                            editcompleted3.textContent = 'edit'
-                                           }else{
-                                            editcompleted3.textContent = "save"
-                                           }
-                                         })
+   const editablethree = document.getElementById('editablethree');
+   const editcompleted3 = document.getElementById('editcompleted3');
+ editcompleted3.addEventListener('click', function(){
+  editablethree.disabled = !editablethree.disabled;
+ if(editablethree.disabled){
+  editcompleted3.textContent = 'edit'
+}else{
+ editcompleted3.textContent = "save"
+      }
+})
 
                                         
 
@@ -207,32 +199,6 @@ secondinputfield.disabled = !secondinputfield.disabled;
   item.remove()
 }
 
-
-// function dragStart(event) {
-//   // Storring data which is being dragged & holding the data 
-//   event.dataTransfer.setData("Text", event.target.id);
-// }
-
-
-
-// //   Function to drop selected element
-
-// function drop(event) {
-// // Getting data from the function drag start where we set the data by targetting id
-
-//   const data = event.dataTransfer.getData("Text");
-
-//   // Adding appendchild to drop element at target position
-//   event.target.appendChild(document.getElementById(data))
-// }
-
-
-// //  Function to allow element to be dropped
-
-
-// function allowDrop(event) {
-//   // stops the element at the position where you want to drop it.
-//   event.preventDefault();}
 
   
 
@@ -294,29 +260,46 @@ updatebutton.innerHTML = "add"
 }
 
 
-function displayEntries(){
+const array = []
+
+function displayEntries()
+{
   const tbody = document.getElementById('new-entries')
+  
+  tbody.innerHTML = ""; 
 
-  tbody.innerHTML = "";
-
+  // <td  >${entry.newentry}</td>
   data.forEach((entry,index) => {
-    const row = document.createElement("tr")
+    const row = document.createElement('tr')
+    row.classList = 'tasktodo'
+    row.id = "addnewtask"
     row.innerHTML = `
-    <td class="row2">${entry.newentry}<td>
-  
-    <td class="row2"  onclick="edititem(${index})" >
- <img id="openinput" width="23px" height="20px"  src="images/icons8-edit-document-24.png" alt=""><td>
-    <td class="row2 deleteentry" onclick="deleteitem(${index})">  <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""><td>
-     
-`;
+     <input  class="addnewtask"  type="input"  id="myInput-${index}" value="${entry.newentry}" disabled>
+ <td type="button" class="cursor-pointer editbutton" id="editinputbtn${index}" onclick="toggleInput(${index})">Edit</td>
+
+    <td class="row2 deleteentry" onclick="deleteitem(${index})">  <img width="30px" src="images/icons8-delete-100.png" alt=""><td>`;
     tbody.appendChild(row)
-  })
+});
+}
 
+  function toggleInput(index){
 
-  
+    var inputfield = document.getElementById(`myInput-${index}`);
+    var btntoeditinpt = document.getElementById(`editinputbtn${index}`)
+
+    inputfield.disabled = !inputfield.disabled 
+
+if(inputfield.disabled){
+  btntoeditinpt.textContent = "Edit"
+
+}
+else{
+  btntoeditinpt.textContent = "Save"
+
 
 }
 
+};
 
 
 
@@ -324,9 +307,9 @@ function displayEntries(){
 
 const loginform = document.getElementById('loginform')
 loginform.addEventListener('submit', (ev) =>{
-  ev.preventDefault()
-})
+  ev.preventDefault()});
 
+  // function to dlete item
 
 function deleteitem(index){
   data.splice(index,1);
@@ -337,130 +320,324 @@ function deleteitem(index){
 
 const updatebutton = document.getElementById('updatebutton')
 
+// function to edit item
+
 function edititem(index){
   const entry = data[index];
 document.getElementById('add-entry').value = entry.newentry;
 currentEditIndex = index
 updatebutton.innerHTML = "save"
 
-const openinp = document.getElementById('openinput')
+const openinp = document.getElementById('editinputbtn')
 
 openinp.addEventListener("click",() =>{
   modal.classList.add("open")})
 
 }
+ 
 
-const dropItems = document.getElementById('box-1')
-const dropitem = document.getElementById('box-2')
-const dropitem3 = document.getElementById('box-3')
+
+// new sortable(dropItems{
+
+// })
+
+
+// new Sortable(dropItems,{
+//   animation: 300,
+//   chosenClass: "sortable-chosen",
+//   dragClass: "sortable-drag",
+// });
+
+// new Sortable(dropitem4,{
+//   animation: 300,
+//   chosenClass: "sortable-chosen",
+//   dragClass: "sortable-drag",
+// });
+
+
+
+// new Sortable(dropitem,{
+//   animation: 370,
+//   chosenClass: "sortable-chosen",
+//   dragClass: "sortable-drag",
+
+// })
+// new Sortable(dropitem3,{
+//   animation: 360,
+//   chosenClass: "sortable-chosen",
+//   dragClass: "sortable-drag",
+
+// });
+
+
+
+
+// const draggables = document.querySelectorAll(".tasktodo");
+// const droppables = document.querySelectorAll(".droptarget")
+
+
+// draggables.forEach((tasktodo) => {
+//   tasktodo.addEventListener("dragstart", () =>{
+//     tasktodo.classList.add("is-dragging")
+//   })
+//   tasktodo.addEventListener("dragend", () =>{
+//     tasktodo.classList.remove("is-dragging")
+//   })
+
+// });
+
+
+
+// droppables.forEach((zone) =>{
+//   zone.addEventListener("dragover",(e) =>{
+//     e.preventDefault();
+
+//     const bottomTask = insertAboveTask(zone,e.clientY);
+// const curTask = document.querySelector(".is-dragging");
+
+// if (!bottomTask){
+//   zone.appendChild(curTask);
+// }else{
+//   zone.insertBefore(curTask, bottomTask);
+// }
+
+//   });
+// })
+
+
+// const  insertAboveTask = ( zone,mouseY) =>{
+// const els = querySelectorAll(".tasktodo:not(.is-dragging)");
+
+
+// let closestTask = null;
+// let closestOffset = Number.NEGATIVE_INFINITY;
+
+// els.forEach((tasktodo) =>{
+//   const { top } = tasktodo.getBoundingClientRect();
+
+//   const offset = mouseY - top;
+  
+// if (offset < 0 && offset > closestOffset){
+//   closestOffset = offset;
+//   closestTask = tasktodo;
+// }
+
+// })
+
+// };
+
+
+// const boxes = document.querySelectorAll('.box')
+// image = document.querySelector('.img') 
+
+
+// boxes.forEach((box) =>{
+//   box.addEventListener("dragover", (e) =>{
+//     e.preventDefault()
+//   });
+// box.addEventListener("drop",()=> {
+//   box.appendChild(image)
+// } )
+
+// })
+
+
+// const boxes = document.querySelectorAll('.droptarget')
+
+// dragtobe = document.querySelector('#dragtarget')
+// dragtobe2 = document.querySelector('#dragtarget2')
+
+// boxes.forEach((droptarget) =>{
+//   droptarget.addEventListener("dragover", (e) =>{
+//     e.preventDefault()
+//   });
+//   droptarget.addEventListener("drop",()=>{
+//     droptarget.appendChild(dragtobe)
+//     droptarget.appendChild(dragtobe2)
+//   })
+
+
+
+
+// })
+// boxes.forEach((droptarget) =>{
+//   droptarget.addEventListener("dragover", (e) =>{
+//     e.preventDefault()
+//   });
+//   droptarget.addEventListener("drop",()=>{
+//     droptarget.appendChild(dragtobe2)
+//   })
+
+  
+// })
+
+
+
+// droptarget.addEventListener("drop",()=>{
+//   droptarget.appendChild(dragtobe2)
+// })
+
+
+
+//   function dragStart(event){
+//     event.dataTransfer.setData("Text",event.target.id);}
+
+//   function allowDrop(event){
+//     event.preventDefault();
+//   }
+
+//   function drop(event){
+//     event.preventDefault();
+//     const data = event.dataTransfer.getData("Text");
+//     event.target.appendChild(document.getElementById(data))
+//   }
+
+
+
+// const imgBox = document.getElementsByClassName
+// ("imgbox");
+
+// const whiteBoxes = document.getElementsByClassName('whiteBox')
+
+
+// imgBox.addEventListener('dragstart', ()=>{
+// console.log("dragstart has been triggered")
+// })
+
+// imgBox.addEventListener('dragend', ()=>{
+//   console.log("dragend has been triggered")
+
+// })
+
+
+// for(whiteBox of whiteBoxes){
+//   whiteBox.addEventListener('dragover',()=>{
+    
+//   })
+//   whiteBox.addEventListener('dragenter',()=>{
+
+//   })
+//   whiteBox.addEventListener('dragleave',()=>{
+
+//   })
+//   whiteBox.addEventListener('drop',()=>{
+
+//   })
+// }
+
+
+
+
+// const sortableList = document.querySelector(".droptarget")
+// const items = sortableList.querySelectorAll(".tasktodo");
+
+
+// items.forEach(tasktodo =>{
+// tasktodo.addEventListener("dragstart",() =>{
+//   tasktodo.classList.add("dragging");
+//   setTimeout(() => tasktodo.classList.add("dragging"), 0)
+// })
+// tasktodo.addEventListener("dragend",() =>{
+//   tasktodo.classList.remove("dragging");
+
+// })
+
+
+// })
+
+// const initSortableList = (e) => {
+//   const draggingItem = sortableList.querySelector(".dragging")
+//   // Getting all items expect currently dragging and making array of them
+// const siblings = [... sortableList.querySelectorAll(".tasktodo:not(.dragging)")]
+
+
+// // Finding the sibling after which the dragging item should be placed
+
+// let nextSibling = siblings.find(sibling =>{
+// return e.clientY <= sibling.offsetTop + sibling.offsetHeight / 2;
+// });
+
+// // console.log(nextSibling)
+
+// // Inserting the dragging item before the found sibling
+// sortableList.insertBefore(draggingItem,nextSibling)}
+
+// sortableList.addEventListener("dragover",initSortableList)
+
+const dropItems = document.querySelector
+('#box-1')
+const dropitem = document.querySelector('#box-2')
+const dropitem3 = document.querySelector('#box-3')
+
+
+// Sortable.forEach((sortable,index) => Sortable.setIndex(index))
 
 new Sortable(dropItems,{
-  animation: 350,
- 
-})
+  group: "sortable",
+animation: 500,
+});
+
 new Sortable(dropitem,{
-  animation: 380,
+  group: "sortable",
+animation: 500,
+
 
 })
 new Sortable(dropitem3,{
-  animation: 370,
+  group: "sortable",
+animation: 500,
 
-})
-
-
-
-// Drag and drop function starts
-
-let lists = document.getElementsByClassName("task-todo");
-let rightbox = document.getElementById("box-1")
-let leftbox = document.getElementById("left")
+});
 
 
-for(list of lists){
-  list.addEventListener("dragstart",function(e){
-    let selected = e.target;
+// let lists = document.getElementsByClassName("tasktodo");
+// let rightBox = document.querySelector("#box-2") 
+// let leftbox = document.querySelector("#box-1") 
+// let thirdbox = document.querySelector("#box-3")
+// for(tasktodo of lists){
+//   tasktodo.addEventListener("dragstart", function (e){
+//     let selected = e.target
+//     console.log("dragstart has been targeted")
 
-rightbox.addEventListener("dragover", function(e){
-  e.preventDefault();
-})
+// rightBox.addEventListener("dragover", function (e){
+//   e.preventDefault()
+//   console.log("dragover has been targeted")
 
-rightbox.addEventListener("drop", function(e){
+// })
+// rightBox.addEventListener("drop", function(e){
+//   rightBox.appendChild(selected);
+// selected = null
+// console.log("drop has been targeted")
 
-  rightbox.appendChild(selected);
-  selected = null
-})
+// })
+// leftbox.addEventListener("dragover", function (e){
+//   e.preventDefault()
+//   console.log("dragover has been targeted")
 
+// })
+// leftbox.addEventListener("drop", function(e){
+//   leftbox.appendChild(selected);
+// selected = null
 
+// console.log("drop has been targeted")
 
-  })
-}
+// });
 
+// thirdbox.addEventListener("dragover", function (e){
+//   e.preventDefault()
+//   console.log("dragover has been targeted")
 
-let box2 = document.getElementById("box-2")
+// })
+// thirdbox.addEventListener("drop", function(e){
+//   thirdbox.appendChild(selected);
+// selected = null
+// console.log("drop has been targeted")
 
+// })
 
-
-for(list of lists){
-  list.addEventListener("dragstart",function(e){
-    let selected = e.target;
-
-    box2.addEventListener("dragover", function(e){
-  e.preventDefault();
-})
-
-box2.addEventListener("drop", function(e){
-
-  box2.appendChild(selected);
-  selected = null
-})
-
-
-
-  })
-}
+// });
+// }
 
 
 
-let box3 = document.getElementById("box-3")
 
-
-for(list of lists){
-  list.addEventListener("dragstart",function(e){
-    let selected = e.target;
-
-    box3.addEventListener("dragover", function(e){
-  e.preventDefault();
-})
-
-box3.addEventListener("drop", function(e){
-
-  box3.appendChild(selected);
-  selected = null
-})
-
-
-
-  })
-}
-
-let row1 = document.getElementById("row1")
-
-
-// row1
-
-for(list of lists){
-  list.addEventListener("dragstart",function(e){
-    let selected = e.target;
-
-    row1.addEventListener("dragover", function(e){
-  e.preventDefault();
-})
-
-row1.addEventListener("drop", function(e){
-
-  row1.appendChild(selected);
-  selected = null
-})
-
-  })
-}
