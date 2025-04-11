@@ -62,7 +62,7 @@ cursor: all-scroll;
 }
 
 .tasktodo3{
-    padding-top: 5px;
+    padding-top: 3px;
     padding-bottom: 5px;
 border-bottom:1px solid black ;
 display: flex; 
@@ -250,6 +250,11 @@ font-weight: 600;
 color: white;
 }
 
+/* 
+#updatebutton:hover{
+    background-color: rgba(4, 121, 4, 0.541);
+
+} */
 #add-entry{
 
     width: 400px;
@@ -257,6 +262,7 @@ color: white;
     padding-left: 10px;
     padding-bottom: 10px;
     border-radius: 8px;
+    /* margin-top: 50px; */
 
 }
 
@@ -267,7 +273,7 @@ color: white;
     margin-bottom: 20px;
     border-radius: 5px;
     border: 1px solid black;
-margin-top: 10px;
+margin-top: 15px;
 }
 
 
@@ -296,7 +302,8 @@ margin-top: 10px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.3 );
     padding: 15px 25px;
     text-align: center;
-    width: 380px;
+    /* width: 380px; */
+
 }
 
 
@@ -309,8 +316,8 @@ margin-top: 10px;
 
  #closeModal{
 position: absolute;
-right: 470px;
-top: 262px;  
+right: 455px;
+top: 260px;  
 }
 
 

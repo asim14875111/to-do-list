@@ -224,32 +224,30 @@ loginform.reset()
 
 
 
-const array = []
+// const array = []
 
-// function displayEntries()
-// {
-//   const tbody = document.getElementById('new-entries')
-  
-//   tbody.innerHTML = ""; 
 
-//   data.forEach((entry,index) => {
-//     const row = document.createElement('tr')
-//     // row.add = `${index}`
-//     row.classList = 'tasktodo'
-//     // row.classList = 'tasktodo draggable-item'
-//     row.id = "addnewtask"
 
-//     row.innerHTML = `
-//     <td>
-//      <input  class="addnewtask"  type="input"  id="myInput-${index}"  value="${entry.newentry}" disabled>
-//      </td>
-//  <td type="button" class="cursor-pointer editbutton" id="editinputbtn${index}" onclick="toggleInput(${index})">Edit</td>
+// Modify your displayEntries function to call attachDeleteHandlers
 
-//     <td class="row2 deleteentry" onclick="deleteitem(${index})">  <img width="30px" src="images/icons8-delete-100.png" alt=""><td>`;
-//     tbody.appendChild(row)
-// });
 
-// }
+function displayEntries() {
+  const tbody = document.getElementById('new-entries');
+  tbody.innerHTML = "";
+
+  data.forEach((entry, index) => {
+    const row = document.createElement('tr');
+    row.className = 'tasktodo';
+    row.innerHTML = `
+      <td><input class="addnewtask" type="input" id="myInput-${index}" value="${entry.newentry}" disabled></td>
+      <td><button class="editbutton" id="editinputbtn${index}" onclick="toggleInput(${index})">Edit</button></td>
+      <td><button class="deleteentry"><img width="30px" src="images/icons8-delete-100.png" alt=""></button></td>`;
+    tbody.appendChild(row);
+  });
+
+  attachDeleteHandlers(); // Attach handlers to new entries
+}
+
 
 
   function toggleInput(index){
@@ -290,70 +288,12 @@ const updatebutton = document.getElementById('updatebutton')
 
 
  
-// const entries = document.querySelector("#new-entries")
-// const container = document.querySelector("#fixedContainer")
 
-const dropItems = document.querySelector('#box-1')
-const dropitem = document.querySelector('#box-2')
-const dropitem3 = document.querySelector('#box-3')
+// const dropItems = document.querySelector('#box-1')
+// const dropitem = document.querySelector('#box-2')
+// const dropitem3 = document.querySelector('#box-3')
 
 
-
-// new Sortable(dropItems,{
-//   group: "sortable",
-// animation: 500,
-// });
-
-
-
-// new Sortable(dropitem,{
-//   group: "sortable",
-//   animation: 500,
-// });
-// new Sortable(dropitem3,{
-//   group: "sortable",
-//   animation: 500,
-// });
-
-
-// Initialize Sortable for the tbody in box-1
-// new Sortable(document.getElementById('new-entries'), {
-//   group: "sortable",
-//   animation: 500,
-//   draggable: ".tasktodo" // Make only tasktodo items draggable
-// });
-
-// // Your existing code for other boxes
-// new Sortable(dropItems, {
-//   group: "sortable",
-//   animation: 500
-// });
-
-// new Sortable(dropitem, {
-//   group: "sortable",
-//   animation: 500
-// });
-
-// new Sortable(dropitem3, {
-//   group: "sortable",
-//   animation: 500
-// });
-
-// new Sortable(document.querySelector('#box-1'),{
-//   group:"sortable",
-//   animation:500,
-// })
-
-
-// new Sortable(document.querySelector('#box-1',{
-//   handle:'.drag-handle',
-//   animation:500,
-// }))
-
-// new Sortable(entries,{
-//   group: "sortable",
-// animation: 500,
-// });
 
 
 
@@ -396,23 +336,6 @@ function attachDeleteHandlers() {
   });
 }
 
-// Modify your displayEntries function to call attachDeleteHandlers
-function displayEntries() {
-  const tbody = document.getElementById('new-entries');
-  tbody.innerHTML = "";
-
-  data.forEach((entry, index) => {
-    const row = document.createElement('tr');
-    row.className = 'tasktodo';
-    row.innerHTML = `
-      <td><input class="addnewtask" type="input" id="myInput-${index}" value="${entry.newentry}" disabled></td>
-      <td><button class="editbutton" id="editinputbtn${index}" onclick="toggleInput(${index})">Edit</button></td>
-      <td><button class="deleteentry"><img width="30px" src="images/icons8-delete-100.png" alt=""></button></td>`;
-    tbody.appendChild(row);
-  });
-
-  attachDeleteHandlers(); // Attach handlers to new entries
-}
 
 // Call this once at page load to handle initial items
 document.addEventListener('DOMContentLoaded', function() {
