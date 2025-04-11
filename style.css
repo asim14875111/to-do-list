@@ -1,9 +1,11 @@
-
+/* 
 body{
-    background-color: rgba(107, 129, 111, 0.11);
-}
-
-
+    /* background-color: rgba(212, 209, 206, 0.486); */
+/* background-image: url("images/7561340.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+/* background-clip: border-box; */ *
+/* } */
 .main-heading{
 font-family: 'Courier New', Courier, monospace;    
 font-size:40px;
@@ -114,7 +116,7 @@ cursor: all-scroll;
 
 .box-heading{
 font-family: 'Courier New', Courier, monospace;
-color: rgb(80, 83, 82);
+color: rgb(52, 54, 53);
 }
 
 
@@ -156,7 +158,7 @@ font-weight: 600;
     padding-top: 1px; 
     padding-bottom: 1px; 
     border-radius: 20px ;
-    background-color: rgba(94, 95, 95, 0.253);
+    background-color: rgba(0, 0, 0, 0.075);
 
 
 }
@@ -332,8 +334,7 @@ justify-self: center;
 }
 
 #openModal:hover{
-    background: rgba(42, 182, 124, 0.658);
-
+    background: rgb(34, 143, 98);
 
 }
 

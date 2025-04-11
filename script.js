@@ -19,7 +19,7 @@
     function deleteprogress1(){
       const progress1 = document.getElementById('dragtarget4')
       progress1.remove() 
-    }
+    }  
 
     function deleteprogress2(){
       const progress2 = document.getElementById('dragtarget5')
@@ -57,9 +57,9 @@
     editButton.addEventListener('click', function(){
       inputfield.disabled = !inputfield.disabled;
       if(inputfield.disabled){
-        editButton.textContent = 'edit'
+        editButton.textContent = 'Edit'
       }else{
-        editButton.textContent = "save"
+        editButton.textContent = "Save"
       }
     })
 
@@ -71,9 +71,9 @@
     editbutton.addEventListener('click', function(){
 secondinputfield.disabled = !secondinputfield.disabled;
       if(secondinputfield.disabled){
-        editbutton.textContent = 'edit'
+        editbutton.textContent = 'Edit'
       }else{
-        editbutton.textContent = "save"
+        editbutton.textContent = "Save"
       }
     })
 
@@ -86,9 +86,9 @@ secondinputfield.disabled = !secondinputfield.disabled;
     edittask.addEventListener('click', function(){
       editinput.disabled = !editinput.disabled;
              if(editinput.disabled){
-              edittask.textContent = 'edit'
+              edittask.textContent = 'Edit'
              }else{
-              edittask.textContent = "save"
+              edittask.textContent = "Save"
              }
            })
 
@@ -102,9 +102,9 @@ secondinputfield.disabled = !secondinputfield.disabled;
     editprogress1.addEventListener('click', function(){
       editablefirstprogess.disabled = !editablefirstprogess.disabled;
              if(editablefirstprogess.disabled){
-              editprogress1.textContent = 'edit'
+              editprogress1.textContent = 'Edit'
              }else{
-              editprogress1.textContent = "save"
+              editprogress1.textContent = "Save"
              }
            })
 
@@ -116,9 +116,9 @@ secondinputfield.disabled = !secondinputfield.disabled;
   editprogress2.addEventListener('click', function(){
   editablesecondprogess.disabled = !editablesecondprogess.disabled;
 if(editablesecondprogess.disabled){
-  editprogress2.textContent = 'edit'
+  editprogress2.textContent = 'Edit'
    }else{
-  editprogress2.textContent = "save"
+  editprogress2.textContent = "Save"
                    }
                  })
 
@@ -130,9 +130,9 @@ if(editablesecondprogess.disabled){
  editprogress3.addEventListener('click', function(){
  editablethirdprogess.disabled = !editablethirdprogess.disabled;
   if(editablethirdprogess.disabled){
-   editprogress3.textContent = 'edit'
+   editprogress3.textContent = 'Edit'
   }else{
-   editprogress3.textContent = "save"
+   editprogress3.textContent = "Save"
                          }
                        })
     
@@ -146,7 +146,7 @@ if(editablesecondprogess.disabled){
     if(editableone.disabled){
     editcompleted1.textContent = 'Edit'
    }else{
- editcompleted1.textContent = "save"
+ editcompleted1.textContent = "Save"
  }
    })
           
@@ -159,9 +159,9 @@ if(editablesecondprogess.disabled){
  editcompleted2.addEventListener('click', function(){
   editabletwo.disabled = !editabletwo.disabled;
  if(editabletwo.disabled){
-    editcompleted2.textContent = 'edit'
+    editcompleted2.textContent = 'Edit'
     }else{
-   editcompleted2.textContent = "save"
+   editcompleted2.textContent = "Save"
  }
  })
                 
@@ -171,36 +171,14 @@ if(editablesecondprogess.disabled){
  editcompleted3.addEventListener('click', function(){
   editablethree.disabled = !editablethree.disabled;
  if(editablethree.disabled){
-  editcompleted3.textContent = 'edit'
+  editcompleted3.textContent = 'Edit'
 }else{
- editcompleted3.textContent = "save"
+ editcompleted3.textContent = "Save"
       }
 })
 
                                         
 
-      const taskInput = document.getElementById('taskInput');
-     const taskList = document.getElementById('taskList')
-                                         
-  function addTask(){
-    const taskText = taskInput.value;
-    if(taskText !== ''){
-    const item = document.querySelector('li');
-    item.textContent = taskText;
-     taskList.appendChild(item)
-     taskInput.value = '' }
- }  
-
-
-
- function deletelist(){
-  const item = document.querySelector('li');
-
-  item.remove()
-}
-
-
-  
 
 //   // Functions to delete rows
 
@@ -228,11 +206,8 @@ cancel.addEventListener("click",() =>{
 
 
 let data =[]
-currentEditIndex = null
 
 function cancelentries(){
- 
-
   loginform.reset()
 }
 
@@ -242,15 +217,8 @@ const entry = {
   newentry}
 
 
-if(currentEditIndex !== null){
-  data[currentEditIndex] = entry;
-  currentEditIndex = null
-}
-else{
   data.push(entry)
-  // console.log(entry)
-
-}
+  
 
 displayEntries()
 loginform.reset()
@@ -268,7 +236,6 @@ function displayEntries()
   
   tbody.innerHTML = ""; 
 
-  // <td  >${entry.newentry}</td>
   data.forEach((entry,index) => {
     const row = document.createElement('tr')
     row.classList = 'tasktodo'
@@ -316,7 +283,8 @@ function deleteitem(index){
   const loginform = document.getElementById('loginform')
   loginform.reset()
   displayEntries()
-  updatebutton.innerHTML = "Add"}
+  updatebutton.innerHTML = "Add"
+}
 
 const updatebutton = document.getElementById('updatebutton')
 
@@ -328,313 +296,36 @@ document.getElementById('add-entry').value = entry.newentry;
 currentEditIndex = index
 updatebutton.innerHTML = "save"
 
-const openinp = document.getElementById('editinputbtn')
 
-openinp.addEventListener("click",() =>{
-  modal.classList.add("open")})
 
 }
  
-
-
-// new sortable(dropItems{
-
-// })
-
-
-// new Sortable(dropItems,{
-//   animation: 300,
-//   chosenClass: "sortable-chosen",
-//   dragClass: "sortable-drag",
-// });
-
-// new Sortable(dropitem4,{
-//   animation: 300,
-//   chosenClass: "sortable-chosen",
-//   dragClass: "sortable-drag",
-// });
-
-
-
-// new Sortable(dropitem,{
-//   animation: 370,
-//   chosenClass: "sortable-chosen",
-//   dragClass: "sortable-drag",
-
-// })
-// new Sortable(dropitem3,{
-//   animation: 360,
-//   chosenClass: "sortable-chosen",
-//   dragClass: "sortable-drag",
-
-// });
-
-
-
-
-// const draggables = document.querySelectorAll(".tasktodo");
-// const droppables = document.querySelectorAll(".droptarget")
-
-
-// draggables.forEach((tasktodo) => {
-//   tasktodo.addEventListener("dragstart", () =>{
-//     tasktodo.classList.add("is-dragging")
-//   })
-//   tasktodo.addEventListener("dragend", () =>{
-//     tasktodo.classList.remove("is-dragging")
-//   })
-
-// });
-
-
-
-// droppables.forEach((zone) =>{
-//   zone.addEventListener("dragover",(e) =>{
-//     e.preventDefault();
-
-//     const bottomTask = insertAboveTask(zone,e.clientY);
-// const curTask = document.querySelector(".is-dragging");
-
-// if (!bottomTask){
-//   zone.appendChild(curTask);
-// }else{
-//   zone.insertBefore(curTask, bottomTask);
-// }
-
-//   });
-// })
-
-
-// const  insertAboveTask = ( zone,mouseY) =>{
-// const els = querySelectorAll(".tasktodo:not(.is-dragging)");
-
-
-// let closestTask = null;
-// let closestOffset = Number.NEGATIVE_INFINITY;
-
-// els.forEach((tasktodo) =>{
-//   const { top } = tasktodo.getBoundingClientRect();
-
-//   const offset = mouseY - top;
-  
-// if (offset < 0 && offset > closestOffset){
-//   closestOffset = offset;
-//   closestTask = tasktodo;
-// }
-
-// })
-
-// };
-
-
-// const boxes = document.querySelectorAll('.box')
-// image = document.querySelector('.img') 
-
-
-// boxes.forEach((box) =>{
-//   box.addEventListener("dragover", (e) =>{
-//     e.preventDefault()
-//   });
-// box.addEventListener("drop",()=> {
-//   box.appendChild(image)
-// } )
-
-// })
-
-
-// const boxes = document.querySelectorAll('.droptarget')
-
-// dragtobe = document.querySelector('#dragtarget')
-// dragtobe2 = document.querySelector('#dragtarget2')
-
-// boxes.forEach((droptarget) =>{
-//   droptarget.addEventListener("dragover", (e) =>{
-//     e.preventDefault()
-//   });
-//   droptarget.addEventListener("drop",()=>{
-//     droptarget.appendChild(dragtobe)
-//     droptarget.appendChild(dragtobe2)
-//   })
-
-
-
-
-// })
-// boxes.forEach((droptarget) =>{
-//   droptarget.addEventListener("dragover", (e) =>{
-//     e.preventDefault()
-//   });
-//   droptarget.addEventListener("drop",()=>{
-//     droptarget.appendChild(dragtobe2)
-//   })
-
-  
-// })
-
-
-
-// droptarget.addEventListener("drop",()=>{
-//   droptarget.appendChild(dragtobe2)
-// })
-
-
-
-//   function dragStart(event){
-//     event.dataTransfer.setData("Text",event.target.id);}
-
-//   function allowDrop(event){
-//     event.preventDefault();
-//   }
-
-//   function drop(event){
-//     event.preventDefault();
-//     const data = event.dataTransfer.getData("Text");
-//     event.target.appendChild(document.getElementById(data))
-//   }
-
-
-
-// const imgBox = document.getElementsByClassName
-// ("imgbox");
-
-// const whiteBoxes = document.getElementsByClassName('whiteBox')
-
-
-// imgBox.addEventListener('dragstart', ()=>{
-// console.log("dragstart has been triggered")
-// })
-
-// imgBox.addEventListener('dragend', ()=>{
-//   console.log("dragend has been triggered")
-
-// })
-
-
-// for(whiteBox of whiteBoxes){
-//   whiteBox.addEventListener('dragover',()=>{
-    
-//   })
-//   whiteBox.addEventListener('dragenter',()=>{
-
-//   })
-//   whiteBox.addEventListener('dragleave',()=>{
-
-//   })
-//   whiteBox.addEventListener('drop',()=>{
-
-//   })
-// }
-
-
-
-
-// const sortableList = document.querySelector(".droptarget")
-// const items = sortableList.querySelectorAll(".tasktodo");
-
-
-// items.forEach(tasktodo =>{
-// tasktodo.addEventListener("dragstart",() =>{
-//   tasktodo.classList.add("dragging");
-//   setTimeout(() => tasktodo.classList.add("dragging"), 0)
-// })
-// tasktodo.addEventListener("dragend",() =>{
-//   tasktodo.classList.remove("dragging");
-
-// })
-
-
-// })
-
-// const initSortableList = (e) => {
-//   const draggingItem = sortableList.querySelector(".dragging")
-//   // Getting all items expect currently dragging and making array of them
-// const siblings = [... sortableList.querySelectorAll(".tasktodo:not(.dragging)")]
-
-
-// // Finding the sibling after which the dragging item should be placed
-
-// let nextSibling = siblings.find(sibling =>{
-// return e.clientY <= sibling.offsetTop + sibling.offsetHeight / 2;
-// });
-
-// // console.log(nextSibling)
-
-// // Inserting the dragging item before the found sibling
-// sortableList.insertBefore(draggingItem,nextSibling)}
-
-// sortableList.addEventListener("dragover",initSortableList)
 
 const dropItems = document.querySelector
 ('#box-1')
 const dropitem = document.querySelector('#box-2')
 const dropitem3 = document.querySelector('#box-3')
+const dropitem4 = document.querySelector('#new-entries')
 
 
 new Sortable(dropItems,{
   group: "sortable",
 animation: 500,
 });
-
 new Sortable(dropitem,{
   group: "sortable",
 animation: 500,
-
-
-})
+});
 new Sortable(dropitem3,{
   group: "sortable",
 animation: 500,
-
 });
 
+new Sortable(dropitem4,{
+  group: "sortable",
+animation: 500,
+});
 
-// let lists = document.getElementsByClassName("tasktodo");
-// let rightBox = document.querySelector("#box-2") 
-// let leftbox = document.querySelector("#box-1") 
-// let thirdbox = document.querySelector("#box-3")
-// for(tasktodo of lists){
-//   tasktodo.addEventListener("dragstart", function (e){
-//     let selected = e.target
-//     console.log("dragstart has been targeted")
-
-// rightBox.addEventListener("dragover", function (e){
-//   e.preventDefault()
-//   console.log("dragover has been targeted")
-
-// })
-// rightBox.addEventListener("drop", function(e){
-//   rightBox.appendChild(selected);
-// selected = null
-// console.log("drop has been targeted")
-
-// })
-// leftbox.addEventListener("dragover", function (e){
-//   e.preventDefault()
-//   console.log("dragover has been targeted")
-
-// })
-// leftbox.addEventListener("drop", function(e){
-//   leftbox.appendChild(selected);
-// selected = null
-
-// console.log("drop has been targeted")
-
-// });
-
-// thirdbox.addEventListener("dragover", function (e){
-//   e.preventDefault()
-//   console.log("dragover has been targeted")
-
-// })
-// thirdbox.addEventListener("drop", function(e){
-//   thirdbox.appendChild(selected);
-// selected = null
-// console.log("drop has been targeted")
-
-// })
-
-// });
-// }
 
 
 
