@@ -2,10 +2,7 @@
   // Functions to delete rows
   function deletetask1(){
     const row1 = document.getElementById('dragtarget')
-    
-    row1.remove()
-    
-  }
+    row1.remove()}
   
  function deletetask2(){
     const row2 = document.getElementById('dragtarget2')
@@ -136,7 +133,7 @@ if(editablesecondprogess.disabled){
                          }
                        })
     
-                      //  7th row
+  //  7th row
 
  const editableone = document.getElementById('editableone');
  const editcompleted1 = document.getElementById('editcompleted1');
@@ -150,7 +147,7 @@ if(editablesecondprogess.disabled){
  }
    })
           
-                            //  8th row
+  //  8th row
 
 
  const editabletwo = document.getElementById('editabletwo');
@@ -164,8 +161,8 @@ if(editablesecondprogess.disabled){
    editcompleted2.textContent = "Save"
  }
  })
-                
-                                  //  9th row 
+       
+ //  9th row 
    const editablethree = document.getElementById('editablethree');
    const editcompleted3 = document.getElementById('editcompleted3');
  editcompleted3.addEventListener('click', function(){
@@ -205,9 +202,10 @@ cancel.addEventListener("click",() =>{
 
 
 
-let data =[]
+let data = []
+function cancelentries()
+{
 
-function cancelentries(){
   loginform.reset()
 }
 
@@ -222,10 +220,8 @@ const entry = {
 
 displayEntries()
 loginform.reset()
-updatebutton.innerHTML = "add"
-
-
 }
+
 
 
 const array = []
@@ -238,22 +234,28 @@ function displayEntries()
 
   data.forEach((entry,index) => {
     const row = document.createElement('tr')
+    // row.add = `${index}`
     row.classList = 'tasktodo'
+    // row.classList = 'tasktodo draggable-item'
     row.id = "addnewtask"
+
     row.innerHTML = `
-     <input  class="addnewtask"  type="input"  id="myInput-${index}" value="${entry.newentry}" disabled>
+    <td>
+     <input  class="addnewtask"  type="input"  id="myInput-${index}"  value="${entry.newentry}" disabled>
+     </td>
  <td type="button" class="cursor-pointer editbutton" id="editinputbtn${index}" onclick="toggleInput(${index})">Edit</td>
 
     <td class="row2 deleteentry" onclick="deleteitem(${index})">  <img width="30px" src="images/icons8-delete-100.png" alt=""><td>`;
     tbody.appendChild(row)
 });
+
 }
+
 
   function toggleInput(index){
 
     var inputfield = document.getElementById(`myInput-${index}`);
     var btntoeditinpt = document.getElementById(`editinputbtn${index}`)
-
     inputfield.disabled = !inputfield.disabled 
 
 if(inputfield.disabled){
@@ -261,11 +263,7 @@ if(inputfield.disabled){
 
 }
 else{
-  btntoeditinpt.textContent = "Save"
-
-
-}
-
+  btntoeditinpt.textContent = "Save"}
 };
 
 
@@ -276,7 +274,7 @@ const loginform = document.getElementById('loginform')
 loginform.addEventListener('submit', (ev) =>{
   ev.preventDefault()});
 
-  // function to dlete item
+//   // function to delete item
 
 function deleteitem(index){
   data.splice(index,1);
@@ -290,28 +288,33 @@ const updatebutton = document.getElementById('updatebutton')
 
 // function to edit item
 
-function edititem(index){
-  const entry = data[index];
-document.getElementById('add-entry').value = entry.newentry;
-currentEditIndex = index
-updatebutton.innerHTML = "save"
 
-
-
-}
  
-
-const dropItems = document.querySelector
-('#box-1')
+const dropItems = document.querySelector('#box-1')
 const dropitem = document.querySelector('#box-2')
 const dropitem3 = document.querySelector('#box-3')
-const dropitem4 = document.querySelector('#new-entries')
+// const entries = document.querySelector("#new-entries")
+// const container = document.querySelector("#fixedContainer")
+
 
 
 new Sortable(dropItems,{
   group: "sortable",
 animation: 500,
 });
+
+
+// new Sortable(document.querySelector('#box-1'),{
+//   group:"sortable",
+//   animation:500,
+// })
+
+
+// new Sortable(document.querySelector('#box-1',{
+//   handle:'.drag-handle',
+//   animation:500,
+// }))
+
 new Sortable(dropitem,{
   group: "sortable",
 animation: 500,
@@ -321,10 +324,10 @@ new Sortable(dropitem3,{
 animation: 500,
 });
 
-new Sortable(dropitem4,{
-  group: "sortable",
-animation: 500,
-});
+// new Sortable(entries,{
+//   group: "sortable",
+// animation: 500,
+// });
 
 
 

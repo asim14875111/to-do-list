@@ -1,11 +1,11 @@
-/* 
+
 body{
-    /* background-color: rgba(212, 209, 206, 0.486); */
-/* background-image: url("images/7561340.jpg");
+    background-color: rgba(212, 209, 206, 0.486);
+ /* background-image: url("images/7561340.jpg");  */
 background-size: cover;
 background-repeat: no-repeat;
-/* background-clip: border-box; */ *
-/* } */
+background-clip: border-box; 
+}
 .main-heading{
 font-family: 'Courier New', Courier, monospace;    
 font-size:40px;
@@ -480,4 +480,9 @@ width: 130px;
 
 #editinputbtn0{
     cursor: pointer;
+}
+
+
+#fixedContainer{
+    border: 1px solid black;
 }

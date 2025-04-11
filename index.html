@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.6/Sortable.min.js" integrity="sha512-csIng5zcB+XpulRUa+ev1zKo7zRNGpEaVfNB9On1no9KYTEY/rLGAEEpvgdw6nim1WdTuihZY1eqZ31K7/fZjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.6/Sortable.min.js" integrity="sha512-csIng5zcB+XpulRUa+ev1zKo7zRNGpEaVfNB9On1no9KYTEY/rLGAEEpvgdw6nim1WdTuihZY1eqZ31K7/fZjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ 
  
 
 <link rel="stylesheet" href="style.css">
@@ -24,7 +24,7 @@
                 <img   width="20px" src="images/icons8-close-50.png" alt="">
              </p>
                
-            <div class="input-div"> <input type="text" name="" id="add-entry" placeholder="Add new entry" required >
+            <div class="input-div"> <input type="text" name="" id="add-entry" placeholder="Add new entry"    required >
              
              <!-- <div class="add-button"> -->
           
@@ -75,10 +75,9 @@
         <h2 class="box-heading" > Completed:</h2>
     </div> </div>
 
-    <div class="boxes  justify-self-center ">
+    <div class="boxes ">
 
         <!-- <div class="box"> -->
-                      
         <div  id="box-1" class="droptarget">
 
      
@@ -90,15 +89,11 @@
 
         <input class="w-fit" type="text" id="first-input" value="Review designs" disabled >
 
-    <div class="imgs">
-
-      
+    <div class="imgs">      
          <button   class="editbutton"
          id="editButton" > Edit</button>
 
 
-        <!-- <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt=""> -->
-     
 
 <button onclick="deletetask1()" >
     <img width="30px" height="30px" src="images/icons8-delete-100.png" alt="">
@@ -115,9 +110,7 @@
 
     <button class="editbutton" id="editbutton" > Edit</button>
 
-    <!-- <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt="">
- -->
-
+ 
 
 <button onclick="deletetask2()">    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
 
@@ -132,43 +125,29 @@
 
     <div class="imgs">
         <button class="editbutton"  id="edittask" >Edit</button>
-        <!-- <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt=""> -->
+    
 
-
-    <button onclick="deleteitem3()" >    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
+    <button onclick="deleteitem3()" >    
+    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
     </div>
 
 </div>
-   
-     <!-- <table>
+<table>
+    <tbody class="drag-handle" id="new-entries">
+    </tbody>
+</table>
 
-
-        <tbody  id="new-entries">
-
-       
-
-        </tbody>
-    </table>
- -->
-    <div>
-<p draggable="true"   id="new-entries"></p>
 </div>
-    </div>
-<!-- </div> -->
 
-<!-- <div class="box"> -->
          
-    <div  id="box-2" class="droptarget">
+ <div  id="box-2" class="droptarget">
  
-        <!-- ondragstart="dragStart(event)" -->
 <div
         class="tasktodo" id="dragtarget4" draggable="true" >
         <input type="text" id="editablefirstprogess" value="Code refactoring" disabled >
 
 <div class="imgs">
     <button class="editbutton" id="editprogress1" >Edit</button>
-
-    <!-- <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt=""> -->
 
 <button onclick="deleteprogress1()" >    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
 </div>
@@ -182,7 +161,7 @@
 
         <button class="editbutton" id="editprogress2" >Edit</button>
 
-        <!-- <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt=""> -->
+
     <button onclick="deleteprogress2()" >     <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
 
 </div>
@@ -196,7 +175,7 @@
 
     <button class="editbutton" id="editprogress3" >Edit</button>
 
-    <!-- <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt=""> -->
+
     <button onclick="deleteprogress3()" >    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
 
 </div>
@@ -207,9 +186,6 @@
     
     
     </div>
-<!-- </div> -->
-    <!-- <div class="box" > -->
-        
     <div  id="box-3" class="droptarget">
     
      
@@ -219,8 +195,6 @@
 
     <div class="imgs">
         <button class="editbutton" id="editcompleted1" >Edit</button>
-
-        <!-- <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt=""> -->
 <button onclick="completed1()" >    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
 
 </div>
@@ -232,8 +206,6 @@
 
     <div class="imgs">
         <button class="editbutton" id="editcompleted2" >Edit</button>
-
-        <!-- <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt=""> -->
 <button onclick="deletecompletedtask()">    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
 </div>
 
@@ -248,7 +220,6 @@
         <div class="imgs">
             <button class="editbutton" id="editcompleted3">Edit</button>
 
-            <!-- <img width="23px" height="20px" src="images/icons8-edit-document-24.png" alt=""> -->
 <button onclick="deleterow()" >    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
 </div>
 
@@ -261,15 +232,7 @@
 
 </div>
 
-<!-- <div class="whiteBox">
-<div draggable="true" class="imgbox">Imagebox</div>
-<div draggable="true" class="imgbox">Imagebox</div>
 
-</div>
-<div class="whiteBox"></div>
-<div class="whiteBox"></div>
-<div class="whiteBox"></div>
- -->
 
 
 
