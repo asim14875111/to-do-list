@@ -257,7 +257,7 @@ const taskRow = button.closest('.tasktodo');
 
 
 // getting the parent container of taskrow 
-// Parent element: that hold all the new added entries
+// Parent element: that hold all the newly added entries
       const parentContainer = taskRow.parentElement;
       // Checking if the task row is in new-entries container
       if (parentContainer.id === "new-entries") {
@@ -298,7 +298,6 @@ containers.forEach(function(container) {
 //  Define the onEnd event, which happens when the item is dropped
     onEnd: function(event) {
 
-
       // Checking if the item was dragged from 'new-entries' and dropped into differnt box
       if (event.from.id === "new-entries" && event.from !== event.to){
         // Getting old index of new entry where it was before and delete if from there
@@ -328,9 +327,6 @@ else{
   btntoeditinpt.textContent = "Save"
 }
 };
-
-
-
 
 const loginform = document.getElementById('loginform')
 loginform.addEventListener('submit', (ev) =>{
