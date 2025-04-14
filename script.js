@@ -262,20 +262,21 @@ const taskRow = button.closest('.tasktodo');
       // Checking if the task row is in new-entries container
       if (parentContainer.id === "new-entries") {
 
-        // If the new added entry is in new-entries container then the index of taskrow in the parentcontainer
+        // If the new added entry is in new-entries container
+        // then the index of taskrow in the parentcontainer
 
         const index = Array.from(parentContainer.children).indexOf(taskRow);
-
+                               
         // Remove the item from the data array using the foundindex 
         data.splice(index, 1);    
-
+ 
         // update the entries
 
-        displayEntries();          
+        displayEntries();         
       } else
      {
         // if the item is in diffrent box just remove it
-        taskRow.remove();
+         taskRow.remove();
     }
     });
   });
@@ -297,8 +298,8 @@ containers.forEach(function(container) {
 
 //  Define the onEnd event, which happens when the item is dropped
     onEnd: function(event) {
-
-      // Checking if the item was dragged from 'new-entries' and dropped into differnt box
+          
+    // Checking if the item was dragged from 'new-entries' and dropped into differnt box
       if (event.from.id === "new-entries" && event.from !== event.to){
         // Getting old index of new entry where it was before and delete if from there
         data.splice(event.oldIndex,1);

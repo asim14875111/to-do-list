@@ -1,6 +1,6 @@
 # TODO List 
 
-This is a simple TODO (Where you can add new entries,drag and drop them and delete them) application.
+This is a simple TODO (Where you can add new entries,drag and drop them and delete them) list.
 
 
 ## Features
