@@ -1,237 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.6/Sortable.min.js" integrity="sha512-csIng5zcB+XpulRUa+ev1zKo7zRNGpEaVfNB9On1no9KYTEY/rLGAEEpvgdw6nim1WdTuihZY1eqZ31K7/fZjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
- 
- 
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.6/Sortable.min.js"
+            integrity="sha512-csIng5zcB+XpulRUa+ev1zKo7zRNGpEaVfNB9On1no9KYTEY/rLGAEEpvgdw6nim1WdTuihZY1eqZ31K7/fZjw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
 
-<link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css" />
 
-    <title>Document</title>
-</head>
-<body>
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="modal" id="modal">
+            <div class="modal-inner">
+                <form
+                    autocomplete="off"
+                    action=""
+                    id="loginform"
+                    onsubmit="return addEntry(event)"
+                >
+                    <p onclick="cancelentries()" id="closeModal">
+                        <img
+                            width="23px"
+                            src="images/icons8-close-50.png"
+                            alt=""
+                        />
+                    </p>
 
- 
-<div class="modal" id="modal">
-    <div class="modal-inner">
+                    <div class="input-nd-btn" >
+                    <div class="input-div">
+                        <input
+                            type="text"
+                            name=""
+                            id="add-entry"
+                            placeholder="Add new entry"
+                            required
+                        />
+                    </div>
 
-        
-        <form autocomplete="off" action="" id="loginform" onsubmit="return addEntry(event)">
+                    <div class="buttons-div">
+                        <button
+                            type="submit"
+                            onclick="displayEntries()"
+                            id="updatebutton"
+                        >
+                            Add Entry
+                        </button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
 
-            <p onclick="cancelentries()" id="closeModal">
-                <img   width="23px" src="images/icons8-close-50.png" alt="">
-             </p>
-               
-            <div class="input-div"> <input type="text" name="" id="add-entry" placeholder="Add new entry"    required >
-             
-        
-         </div>
-        
-         <div class="buttons-div">
-            <button type="submit" onclick="displayEntries()" id="updatebutton">Add  Entry</button>
-      
-           </div>
-   
-                 </form>
-              
-    </div>
-</div>
-  
-
-
-    
-    <div class="container">
-        <div>
-            <img class="justify-self-center" src="images/icons8-edit-property-100.png" alt="">
-                <h1 class="main-heading  " >To-do list </h1>
-    
+        <div class="container">
+            <div class="todo-heading-nd-button">
+            <div class="todo" >
+                <img
+                    class="justify-self-center"
+                    src="images/icons8-edit-property-100.png"
+                    alt=""
+                />
+                <h1 class="main-heading">To-do list</h1>
             </div>
 
             <button id="openModal">
                 Add new task
-            <img src="images/icons8-add-24.png" alt="">
+                <img src="images/icons8-add-24.png" alt="" />
             </button>
+        </div>
+            <!-- <img class="hamburger" onclick="" src="images/icons8-menu-24.png" alt=""> -->
+             
 
+            
+            <div class="heading-nd-box">
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span  class="bar"></span>
+                    <span  class="bar"></span>
+                </div>
+               
+                <div class="boxes">
+                <div class="box-1-heading"  >
+                    <div class="first-heading">
+                        <img
+                            height="25px"
+                            src="images/icons8-edit-document-24.png"
+                            alt=""
+                        />
+                        <h2 class=" box-heading">To-do:</h2>
+                    </div>
+                <div id="box-1" class="droptarget">
+                    <div class="tasktodo" id="dragtarget" draggable="true">
+                        <input
+                            class="w-fit"
+                            type="text"
+                            id="first-input"
+                            value="Review designs"
+                            disabled
+                        />
 
-                
-      
+                        <div class="imgs">
+                            <button class="editbutton" id="editButton">
+                                Edit
+                            </button>
 
-    <div class="headings-div" > 
-        <div class="first-heading" > 
-            <img height="25px" src="images/icons8-edit-document-24.png" alt="">
-        <h2 class="box-heading" > To-do:</h2>
-    </div>
-    <div class="second-heading">
-        <img height="35px"
-         src="images/icons8-in-progress-64.png" alt="">
-        <h2  class="box-heading" >  In progress:</h2> 
-    </div>
-    <div class="third-heading">
-        <img height="45px" src="images/icons8-task-completed-100.png" alt="">
-        <h2 class="box-heading" > Completed:</h2>
-    </div> </div>
+                            <button onclick="deletetask1()">
+                                <img
+                                    width="30px"
+                                    height="30px"
+                                    src="images/icons8-delete-100.png"
+                                    alt=""
+                                />
+                            </button>
+                        </div>
+                    </div>
+                    <div class="tasktodo" id="dragtarget2" draggable="true">
+                        <input
+                            type="text"
+                            class="secondinp"
+                            id="2nd-input-field"
+                            value="Css styling"
+                            disabled
+                        />
 
-    <div class="boxes ">
+                        <div class="imgs">
+                            <button class="editbutton" id="editbutton">
+                                Edit
+                            </button>
 
-        <div  id="box-1" class="droptarget">
+                            <button onclick="deletetask2()">
+                                <img
+                                    width="30px"
+                                    height="30px"
+                                    src="images/icons8-delete-100.png"
+                                    alt=""
+                                />
+                            </button>
+                        </div>
+                    </div>
 
-     
-    
-        <div 
-        class="tasktodo" id="dragtarget" draggable="true" >
-  
+                    <div class="tasktodo" id="dragtarget3" draggable="true">
+                        <input
+                            type="text"
+                            id="editinput"
+                            value="Javascript validations"
+                            disabled
+                        />
 
-        <input class="w-fit" type="text" id="first-input" value="Review designs" disabled >
+                        <div class="imgs">
+                            <button class="editbutton" id="edittask">
+                                Edit
+                            </button>
 
-    <div class="imgs">      
-         <button   class="editbutton"
-         id="editButton" > Edit</button>
+                            <button onclick="deleteitem3()">
+                                <img
+                                    width="30px"
+                                    height="30px"
+                                    src="images/icons8-delete-100.png"
+                                    alt=""
+                                />
+                            </button>
+                        </div>
+                    </div>
+                    <table>
+                        <tbody class="drag-handle" id="new-entries"></tbody>
+                    </table>
+                </div>
+            </div>
 
+            <div class="heading-nd-boxes">
+                <div class="second-heading">
+                    <img
+                        height="35px"
+                        src="images/icons8-in-progress-64.png"
+                        alt=""
+                    />
+                    <h2 class="box-heading">In progress:</h2>
+                </div>
+                <div id="box-2" class="droptarget">
+                    <div class="tasktodo" id="dragtarget4" draggable="true">
+                        <input
+                            type="text"
+                            id="editablefirstprogess"
+                            value="Code refactoring"
+                            disabled
+                        />
 
+                        <div class="imgs">
+                            <button class="editbutton" id="editprogress1">
+                                Edit
+                            </button>
 
-<button onclick="deletetask1()" >
-    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt="">
-</button>
+                            <button onclick="deleteprogress1()">
+                                <img
+                                    width="30px"
+                                    height="30px"
+                                    src="images/icons8-delete-100.png"
+                                    alt=""
+                                />
+                            </button>
+                        </div>
+                    </div>
+                    <div class="tasktodo" id="dragtarget5" draggable="true">
+                        <input
+                            type="text"
+                            id="editablesecondprogess"
+                            value="UI redesign"
+                            disabled
+                        />
 
-</div>
+                        <div class="imgs">
+                            <button class="editbutton" id="editprogress2">
+                                Edit
+                            </button>
 
-    </div>
-        <div 
-        class="tasktodo" id="dragtarget2" draggable="true" >
-        <input  type="text" class="secondinp" id="2nd-input-field" value="Css styling" disabled >
+                            <button onclick="deleteprogress2()">
+                                <img
+                                    width="30px"
+                                    height="30px"
+                                    src="images/icons8-delete-100.png"
+                                    alt=""
+                                />
+                            </button>
+                        </div>
+                    </div>
 
-<div class="imgs">
+                    <div class="tasktodo" id="dragtarget6" draggable="true">
+                        <input
+                            type="text"
+                            id="editablethirdprogess"
+                            value="Bug fixing"
+                            disabled
+                        />
+                        <div class="imgs">
+                            <button class="editbutton" id="editprogress3">
+                                Edit
+                            </button>
 
-    <button class="editbutton" id="editbutton" > Edit</button>
+                            <button onclick="deleteprogress3()">
+                                <img
+                                    width="30px"
+                                    height="30px"
+                                    src="images/icons8-delete-100.png"
+                                    alt=""
+                                />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="head-nd-box">
+                <div class="third-heading">
+                    <img
+                        height="45px"
+                        src="images/icons8-task-completed-100.png"
+                        alt=""
+                    />
+                    <h2 class="box-heading">Completed:</h2>
+                </div>
+                <div id="box-3" class="droptarget">
+                    <div class="tasktodo" id="dragtarget7" draggable="true">
+                        <input
+                            type="text"
+                            id="editableone"
+                            value="Server setup"
+                            disabled
+                        />
 
- 
+                        <div class="imgs">
+                            <button class="editbutton" id="editcompleted1">
+                                Edit
+                            </button>
+                            <button onclick="completed1()">
+                                <img
+                                    width="30px"
+                                    height="30px"
+                                    src="images/icons8-delete-100.png"
+                                    alt=""
+                                />
+                            </button>
+                        </div>
+                    </div>
+                    <div class="tasktodo" id="dragtarget8" draggable="true">
+                        <input
+                            type="text"
+                            id="editabletwo"
+                            value="Database config"
+                            disabled
+                        />
 
-<button onclick="deletetask2()">    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
+                        <div class="imgs">
+                            <button class="editbutton" id="editcompleted2">
+                                Edit
+                            </button>
+                            <button onclick="deletecompletedtask()">
+                                <img
+                                    width="30px"
+                                    height="30px"
+                                    src="images/icons8-delete-100.png"
+                                    alt=""
+                                />
+                            </button>
+                        </div>
+                    </div>
 
-</div>
+                    <div class="tasktodo" id="dragtarget9" draggable="true">
+                        <input
+                            type="text"
+                            id="editablethree"
+                            value="Meta tags added"
+                            disabled
+                        />
+                        <div>
+                            <div class="imgs">
+                                <button class="editbutton" id="editcompleted3">
+                                    Edit
+                                </button>
 
-    </div>
-  
-     
-        <div 
-        class="tasktodo" id="dragtarget3" draggable="true" >
-        <input type="text" id="editinput" value="Javascript validations" disabled >
+                                <button onclick="deleterow()">
+                                    <img
+                                        width="30px"
+                                        height="30px"
+                                        src="images/icons8-delete-100.png"
+                                        alt=""
+                                    />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
 
-    <div class="imgs">
-        <button class="editbutton"  id="edittask" >Edit</button>
-    
+        </div>
+        </div>
 
-    <button onclick="deleteitem3()" >    
-    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
-    </div>
-
-</div>
-<table>
-    <tbody class="drag-handle" id="new-entries">
-    </tbody>
-</table>
-
-</div>
-
-         
- <div  id="box-2" class="droptarget">
- 
-<div
-        class="tasktodo" id="dragtarget4" draggable="true" >
-        <input type="text" id="editablefirstprogess" value="Code refactoring" disabled >
-
-<div class="imgs">
-    <button class="editbutton" id="editprogress1" >Edit</button>
-
-<button onclick="deleteprogress1()" >    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
-</div>
-
-    </div>
-        <div 
-        class="tasktodo" id="dragtarget5" draggable="true">
-        <input type="text" id="editablesecondprogess" value="UI redesign" disabled >
-
-    <div class="imgs">
-
-        <button class="editbutton" id="editprogress2" >Edit</button>
-
-
-    <button onclick="deleteprogress2()" >     <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
-
-</div>
-</div>
-  
-     
-        <div 
-        class="tasktodo" id="dragtarget6" draggable="true">
-        <input type="text" id="editablethirdprogess" value="Bug fixing" disabled >
-<div class="imgs">
-
-    <button class="editbutton" id="editprogress3" >Edit</button>
-
-
-    <button onclick="deleteprogress3()" >    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
-
-</div>
-
-    </div>
-    
-    
-    
-    
-    </div>
-    <div  id="box-3" class="droptarget">
-    
-     
-        <div
-        class="tasktodo" id="dragtarget7" draggable="true" >
-        <input type="text" id="editableone" value="Server setup" disabled >
-
-    <div class="imgs">
-        <button class="editbutton" id="editcompleted1" >Edit</button>
-<button onclick="completed1()" >    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
-
-</div>
-
-    </div>
-        <div 
-        class="tasktodo" id="dragtarget8" draggable="true">
-        <input type="text" id="editabletwo" value="Database config" disabled >
-
-    <div class="imgs">
-        <button class="editbutton" id="editcompleted2" >Edit</button>
-<button onclick="deletecompletedtask()">    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
-</div>
-
-    </div>
-  
-
-        <div 
-        class="tasktodo" id="dragtarget9" draggable="true">
-        <input type="text" id="editablethree" value="Meta tags added" disabled >
-    <div>
-
-        <div class="imgs">
-            <button class="editbutton" id="editcompleted3">Edit</button>
-
-<button onclick="deleterow()" >    <img width="30px" height="30px" src="images/icons8-delete-100.png" alt=""></button>
-</div>
-
-</div>
-    </div>
-    
-    
-    </div>
-</div>
-
-</div>
-
-
-
-
-
-<script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>

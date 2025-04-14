@@ -340,3 +340,39 @@ function deleteitem(index){
 
 
 
+
+
+
+// const button = document.querySelector(".hamburger")
+// const boxes = document.querySelector(".heading-nd-box")
+// button.addEventListener("click" , function(){
+
+//   if(boxes.style.display == "none"){
+//    boxes.style.display = "block" 
+//   button.classList.toggle('active')
+// }
+
+
+// else{
+//   boxes.style.display = "none"
+// }
+// }
+// );
+
+
+// function burgermenu(){
+//   let ul = document.querySelector(".heading-nd-box")
+//   let toggle = document.querySelector(".toggle")
+//   ul.classList.toggle('active');
+//   toggle.classList.toggle('active');
+// }
+
+
+const hamburger = document.querySelector(".hamburger")
+const navmenu = document.querySelector(".boxes")
+
+hamburger.addEventListener("click", () =>{
+  hamburger.classList.toggle("active")
+  navmenu.classList.toggle("active")
+
+})
