@@ -1,4 +1,3 @@
-
   // Functions to delete rows
   function deletetask1(){
     const row1 = document.getElementById('dragtarget')
@@ -174,45 +173,38 @@ if(editablesecondprogess.disabled){
       }
 })
 
-                                        
-
-
-//   // Functions to delete rows
-
 
 
 const openBtn = document.getElementById('openModal')
-const closeBtn = document.getElementById('updatebutton')
+const addentries = document.getElementById('updatebutton')
 const cancel = document.getElementById('closeModal')
-
 const modal = document.getElementById('modal')
 
 
 openBtn.addEventListener("click",() =>{
   modal.classList.add("open")
-})
+});
 
-closeBtn.addEventListener("click",() =>{
+
+addentries.addEventListener("click",() =>{
   modal.classList.remove("open")
-})
+});
 
 cancel.addEventListener("click",() =>{
   modal.classList.remove("open")
-})
+});
 
 
-
-let data = []
-function cancelentries()
-{
-
+function cancelentries(){
   loginform.reset()
 }
 
+let data = []
+
+
 function addEntry(){
   const newentry = document.getElementById('add-entry').value
-const entry = {
-  newentry}
+const entry = {newentry}
 
 
   data.push(entry)
@@ -224,12 +216,7 @@ loginform.reset()
 
 
 
-// const array = []
-
-
-
 // Modify your displayEntries function to call attachDeleteHandlers
-
 
 function displayEntries() {
   const tbody = document.getElementById('new-entries');
@@ -250,6 +237,83 @@ function displayEntries() {
 
 
 
+
+function attachDeleteHandlers() {
+
+
+  // Select all the buttons with "deleteentry" class
+
+  const deleteButtons = document.querySelectorAll('.deleteentry');
+
+// Adding loop through all the delete functions
+
+  deleteButtons.forEach(function(button) {
+    // Adding click event listner to each delete button 
+    button.addEventListener('click', function() {
+
+// When the delete button is clicked, find the closet entry with class "tasktodo"
+
+const taskRow = button.closest('.tasktodo');
+
+
+// getting the parent container of taskrow 
+// Parent element: that hold all the new added entries
+      const parentContainer = taskRow.parentElement;
+      // Checking if the task row is in new-entries container
+      if (parentContainer.id === "new-entries") {
+
+        // If the new added entry is in new-entries container then the index of taskrow in the parentcontainer
+
+        const index = Array.from(parentContainer.children).indexOf(taskRow);
+
+        // Remove the item from the data array using the foundindex 
+        data.splice(index, 1);    
+
+        // update the entries
+
+        displayEntries();          
+      } else
+     {
+        // if the item is in diffrent box just remove it
+        taskRow.remove();
+    }
+    });
+  });
+}
+
+
+
+
+// / Initialize Sortable on each container
+const containers = document.querySelectorAll('.droptarget, #new-entries');
+
+containers.forEach(function(container) {
+  new Sortable(container, {
+ // Allow drag-and-drop between these containers
+    group: "sortable",    
+    animation: 500, // Smooth animation when sorting
+
+
+
+//  Define the onEnd event, which happens when the item is dropped
+    onEnd: function(event) {
+
+
+      // Checking if the item was dragged from 'new-entries' and dropped into differnt box
+      if (event.from.id === "new-entries" && event.from !== event.to){
+        // Getting old index of new entry where it was before and delete if from there
+        data.splice(event.oldIndex,1);
+      }
+
+      // Reattach deletehandlers to delete buttons work and they are been dropped into new box
+      attachDeleteHandlers();
+    }
+ });
+});
+
+
+
+
   function toggleInput(index){
 
     var inputfield = document.getElementById(`myInput-${index}`);
@@ -261,9 +325,9 @@ if(inputfield.disabled){
 
 }
 else{
-  btntoeditinpt.textContent = "Save"}
+  btntoeditinpt.textContent = "Save"
+}
 };
-
 
 
 
@@ -273,71 +337,9 @@ loginform.addEventListener('submit', (ev) =>{
   ev.preventDefault()});
 
 //   // function to delete item
-
 function deleteitem(index){
   data.splice(index,1);
-  const loginform = document.getElementById('loginform')
-  loginform.reset()
-  displayEntries()
-  updatebutton.innerHTML = "Add"
-}
-
-const updatebutton = document.getElementById('updatebutton')
-
-// function to edit item
-
-
- 
-
-// const dropItems = document.querySelector('#box-1')
-// const dropitem = document.querySelector('#box-2')
-// const dropitem3 = document.querySelector('#box-3')
-
-
-
-
-
-
-
-// Initialize all sortable containers
-document.querySelectorAll('.droptarget, #new-entries').forEach(el => {
-  new Sortable(el, {
-    group: "sortable",
-    animation: 500,
-    onEnd: function(evt) {
-      if (evt.from !== evt.to) {
-        const itemIndex = evt.oldIndex;
-        if (evt.from.id === "new-entries") {
-          data.splice(itemIndex, 1);
-          displayEntries();
-        }
-      }
-      // Re-attach delete handlers after movement
-      attachDeleteHandlers();
-    }
-  });
-});
-
-// Function to attach delete handlers to all entries
-function attachDeleteHandlers() {
-  document.querySelectorAll('.deleteentry').forEach(btn => {
-    btn.onclick = function() {
-      const row = this.closest('.tasktodo');
-      const container = row.parentElement;
-      
-      if (container.id === "new-entries") {
-        const index = Array.from(container.children).indexOf(row);
-        data.splice(index, 1);
-        displayEntries();
-      } else {
-        row.remove();
-      }
-    };
-  });
 }
 
 
-// Call this once at page load to handle initial items
-document.addEventListener('DOMContentLoaded', function() {
-  attachDeleteHandlers();
-});
+
