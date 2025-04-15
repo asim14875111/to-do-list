@@ -108,7 +108,7 @@ editprogress1.addEventListener('click', function () {
   }
 })
 
-//  5th row
+// 5th row
 
 const editablesecondprogess = document.getElementById('editablesecondprogess');
 const editprogress2 = document.getElementById('editprogress2');
@@ -174,8 +174,7 @@ editcompleted3.addEventListener('click', function () {
      editcompleted3.textContent = 'Edit'
   } else {
      editcompleted3.textContent = "Save"
-  }
-})
+  }})
 
 
 const openBtn = document.getElementById('openModal')
@@ -198,7 +197,7 @@ cancel.addEventListener("click", () => {
 });
 
 
-function cancelentries() {
+function cancelentries(){
   loginform.reset()
 }
 
@@ -213,7 +212,6 @@ function addEntry() {
 
 
   data.push(entry)
-
 
   displayEntries()
   loginform.reset()
@@ -235,8 +233,8 @@ function displayEntries() {
      <td><button class="deleteentry"><img width="30px" src="images/icons8-delete-100.png" alt=""></button></td>`;
      tbody.appendChild(row);
   });
-
-  attachDeleteHandlers(); // Attach handlers to new entries
+ // Attach handlers to new entries
+  attachDeleteHandlers();
 }
 
 
@@ -288,7 +286,7 @@ function attachDeleteHandlers() {
 const containers = document.querySelectorAll('.droptarget, #new-entries');
 
 containers.forEach(function (container) {
-  new Sortable(container, {
+  new Sortable(container, {      
      // Allow drag-and-drop between these containers
      group: "sortable",
      animation: 500, // Smooth animation when sorting
@@ -303,21 +301,22 @@ containers.forEach(function (container) {
            data.splice(event.oldIndex, 1);
         }
 
-        // Reattach deletehandlers to delete buttons work and they are been dropped into new box
+   // Reattach deletehandlers to delete buttons work and they are been dropped into new box
         attachDeleteHandlers();
      }
   });
 });
 
 
-function toggleInput(index) {
+function toggleInput(index){
 
   var inputfield = document.getElementById(`myInput-${index}`);
   var btntoeditinpt = document.getElementById(`editinputbtn${index}`)
   inputfield.disabled = !inputfield.disabled
 
-  if (inputfield.disabled) {
-     btntoeditinpt.textContent = "Edit"
+  if (inputfield.disabled)
+     {
+     btntoeditinpt.textContent = "Edit" 
 
   } else {
      btntoeditinpt.textContent = "Save"
@@ -329,7 +328,7 @@ loginform.addEventListener('submit', (ev) => {
   ev.preventDefault()
 });
 
-//   // function to delete item
+ // function to delete item
 function deleteitem(index) {
   data.splice(index, 1);
 }
