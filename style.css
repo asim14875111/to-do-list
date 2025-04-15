@@ -448,7 +448,7 @@ input {
 }
 
 #editinput {
-	width: 165px;
+	width: 130px;
 }
 
 
@@ -596,7 +596,7 @@ input {
 }
 
 
-@media(max-width:290px) {
+@media(max-width:305px) {
 	#openModal{
 		margin-top: 50px;
 	}
@@ -612,4 +612,8 @@ input {
         transition: 0.3s;
         overflow: auto;
     }
+
+	.droptarget{
+		width: 100%;
+	}
 }
