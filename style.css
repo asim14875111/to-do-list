@@ -517,7 +517,7 @@ input {
 }
 
 
-@media(max-width:800px) {
+@media(max-width:950px) {
 	.boxes {
 		display: flex;
 		flex-wrap: wrap;
