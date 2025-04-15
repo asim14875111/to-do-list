@@ -1,58 +1,18 @@
-// Functions to delete rows
-function deletetask1() {
-  const row1 = document.getElementById('dragtarget')
-  row1.remove()
+
+function Deleteitem() {
+  const deleteButton = document.querySelectorAll('.deleteitem');
+  deleteButton.forEach(function (button) {
+     button.addEventListener('click', function () {
+
+        const taskRow = button.closest('.tasktodo');
+           taskRow.remove();  
+     });
+  });
 }
 
-function deletetask2() {
-  const row2 = document.getElementById('dragtarget2')
-  row2.remove()
-}
-
-function deleteitem3() {
-  const row3 = document.getElementById('dragtarget3')
-  row3.remove()
-}
-
-function deleteprogress1() {
-  const progress1 = document.getElementById('dragtarget4')
-  progress1.remove()
-}
-
-function deleteprogress2() {
-  const progress2 = document.getElementById('dragtarget5')
-  progress2.remove()
-}
-
-function deleteprogress3() {
-  const progress3 = document.getElementById('dragtarget6')
-  progress3.remove()
-}
-
-function deleteprogress3() {
-  const progress3 = document.getElementById('dragtarget6')
-  progress3.remove()
-}
-
-function completed1() {
-  const completed1 = document.getElementById('dragtarget7')
-  completed1.remove()
-}
-
-function deletecompletedtask() {
-  const completedtask = document.getElementById('dragtarget8')
-  completedtask.remove()
-}
-
-
-function deleterow() {
-  const deleterow = document.getElementById('dragtarget9')
-  deleterow.remove()
-}
 
 
 const inputfield = document.getElementById('first-input');
-const editButton = document.getElementById('editButton');
 
 editButton.addEventListener('click', function () {
   inputfield.disabled = !inputfield.disabled;
@@ -255,7 +215,6 @@ function attachDeleteHandlers() {
 
         const taskRow = button.closest('.tasktodo');
 
-
         // getting the parent container of taskrow 
         // Parent element: that hold all the newly added entries
         const parentContainer = taskRow.parentElement;
@@ -342,3 +301,9 @@ hamburger.addEventListener("click", () => {
   boxes.classList.toggle("active")
 
 })
+
+
+
+
+
+
