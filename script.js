@@ -1,19 +1,24 @@
 
 function Deleteitem() {
+
+
+
   const deleteButton = document.querySelectorAll('.deleteitem');
+
+
   deleteButton.forEach(function (button) {
      button.addEventListener('click', function () {
 
         const taskRow = button.closest('.tasktodo');
-           taskRow.remove();  
+           taskRow.remove();
+        
      });
   });
 }
 
 
-
 const inputfield = document.getElementById('first-input');
-
+const editButton = document.getElementById('editButton')
 editButton.addEventListener('click', function () {
   inputfield.disabled = !inputfield.disabled;
   if (inputfield.disabled) {
@@ -24,7 +29,6 @@ editButton.addEventListener('click', function () {
 })
 
 // 2nd row starts
-
 const secondinputfield = document.getElementById('2nd-input-field');
 const editbutton = document.getElementById('editbutton');
 
