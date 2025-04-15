@@ -255,7 +255,7 @@ li {
 
 #add-entry {
 
-	width: 400px;
+	width: 100%;
 	padding-top: 10px;
 	padding-left: 10px;
 	padding-bottom: 10px;
@@ -291,6 +291,7 @@ li {
 .modal.open {
 	opacity: 1;
 	z-index: 999;
+	padding: 20px;
 }
 
 .modal-inner {
@@ -526,6 +527,7 @@ input {
 	body {
 		width: fit-content;
 	}
+
 }
 
 
@@ -538,6 +540,7 @@ input {
 		display: none;
 
 	}
+
 
 
 	.todo-heading-nd-button button {
