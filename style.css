@@ -594,3 +594,10 @@ input {
 	}
 
 }
+
+
+@media(max-width:290px) {
+	#openModal{
+		margin-top: 50px;
+	}
+}
