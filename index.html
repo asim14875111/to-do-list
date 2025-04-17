@@ -61,19 +61,17 @@
                   />
                <h1 class="main-heading">To-do list</h1>
             </div>
-                       <button id="openModal">
+            <button id="openModal">
             Add new task
             <img src="images/icons8-add-24.png" alt="" />
             </button>
-         <div class="heading-nd-box">
-            <div class="hamburger">
-               <span class="bar"></span>
-               <span  class="bar"></span>
-               <span  class="bar"></span>
+            <div class="heading-nd-box">
+               <div class="hamburger">
+                  <span class="bar"></span>
+                  <span  class="bar"></span>
+                  <span  class="bar"></span>
+               </div>
             </div>
-         </div>
-
-
             <div class="boxes">
                <div class="box-1-heading"  >
                   <div class="first-heading">
@@ -87,22 +85,16 @@
                   <div id="box-1" class="droptarget">
                      <div class="tasktodo" id="dragtarget" draggable="true">
                         <div>
-                        <input
-                        class="edit-inp"
-                           type="text"
-                           id="input1"
-                           value="Review designs"
-                           disabled 
- />
-
-                     
-                     </div>
-      
+                           <input
+                              class="edit-inp"
+                              type="text"
+                              id="input1"
+                              value="Review designs"
+                              disabled 
+                              />
+                        </div>
                         <div class="imgs">
                            <button id="edit1inp" class="editbtn" type="button" onclick="toggleEnable('input1')">Edit</button>
-                           <!-- <button onclick="edititem()"  class="editbutton" id="editbtn">
-                              Edit
-                              </button>                       -->
                            <button onclick="Deleteitem()"  class="deleteitem" >
                            <img
                               width="30px"
@@ -115,18 +107,14 @@
                      </div>
                      <div class="tasktodo" id="dragtarget2" draggable="true">
                         <div>
-                        <input
-                           type="text"
-                           class="edit-inp"                           id="input2"
-                           value="Css styling"
-                           disabled/>
-                                 </div>
-                           
+                           <input
+                              type="text"
+                              class="edit-inp"                           id="input2"
+                              value="Css styling"
+                              disabled/>
+                        </div>
                         <div class="imgs">
-                           <button class="editbtn" type="button" onclick="toggleEnable('input2')">Edit</button>   
-                           <!-- <button onclick="edititem()"  class="editbutton" id="editbutton">
-                           Edit
-                           </button> -->
+                           <button id="editbtn2" class="editbtn" type="button" onclick="toggleEnable('input2')">Edit</button>   
                            <button onclick="Deleteitem()" class="deleteitem" >
                            <img
                               width="30px"
@@ -139,19 +127,16 @@
                      </div>
                      <div class="tasktodo" id="dragtarget3" draggable="true">
                         <div>
-                        <input
-                        class="edit-inp"
-                           type="text"
-                           id="input3"
-                           value="Style homepage"
-                           disabled
-                           />
+                           <input
+                              class="edit-inp"
+                              type="text"
+                              id="input3"
+                              value="Style homepage"
+                              disabled
+                              />
                         </div>
-                           <div class="imgs">
-                              <button class="editbtn" type="button" onclick="toggleEnable('input3')">Edit</button>
-                              <!-- <button onclick="edititem()"  class="editbutton" id="edittask">
-                                 Edit
-                                 </button> -->
+                        <div class="imgs">
+                           <button class="editbtn" type="button" id="editbtn3" onclick="toggleEnable('input3')">Edit</button>
                            <button onclick="Deleteitem()" class="deleteitem" >
                            <img
                               width="30px"
@@ -179,14 +164,14 @@
                   <div id="box-2" class="droptarget">
                      <div class="tasktodo" id="dragtarget4" draggable="true">
                         <input
-                        class="edit-inp"
+                           class="edit-inp"
                            type="text"
                            id="input4"
                            value="Code refactoring"
                            disabled
                            />
                         <div class="imgs">
-                           <button class="editbtn" type="button" onclick="toggleEnable('input4')">Edit</button>
+                           <button class="editbtn" type="button" id="editbtn4" onclick="toggleEnable('input4')">Edit</button>
                            <button onclick="Deleteitem()" class="deleteitem" >
                            <img
                               width="30px"
@@ -199,17 +184,14 @@
                      </div>
                      <div class="tasktodo" id="dragtarget5" draggable="true">
                         <input
-                        class="edit-inp"
+                           class="edit-inp"
                            type="text"
                            id="input5"
                            value="UI redesign"
                            disabled
                            />
                         <div class="imgs">
-                           <button class="editbtn" type="button" onclick="toggleEnable('input5')">Edit</button>
-                           <!-- <button onclick="edititem()"  class="editbutton" id="editprogress2">
-                           Edit
-                           </button> -->
+                           <button class="editbtn" type="button" id="editbtn5" onclick="toggleEnable('input5')">Edit</button>
                            <button onclick="Deleteitem()" class="deleteitem" >
                            <img
                               width="30px"
@@ -222,15 +204,14 @@
                      </div>
                      <div class="tasktodo" id="dragtarget6" draggable="true">
                         <input
-                        class="edit-inp"
+                           class="edit-inp"
                            type="text"
                            id="input6"
                            value="Bug fixing"
                            disabled
                            />
                         <div class="imgs">
-                           
-                           <button class="editbtn" type="button" onclick="toggleEnable('input6')">Edit</button>
+                           <button class="editbtn" type="button" id="editbtn6" onclick="toggleEnable('input6')">Edit</button>
                            <button class="deleteitem" >
                            <img
                               width="30px"
@@ -255,14 +236,14 @@
                   <div id="box-3" class="droptarget">
                      <div class="tasktodo" id="dragtarget7" draggable="true">
                         <input
-                        class="edit-inp"
+                           class="edit-inp"
                            type="text"
                            id="input7"
                            value="Server setup"
                            disabled
                            />
                         <div class="imgs">
-                           <button class="editbtn" type="button" onclick="toggleEnable('input7')">Edit</button>
+                           <button class="editbtn" type="button" id="editbtn7" onclick="toggleEnable('input7')">Edit</button>
                            <button onclick="Deleteitem()" class="deleteitem">
                            <img
                               width="30px"
@@ -275,17 +256,14 @@
                      </div>
                      <div class="tasktodo" id="dragtarget8" draggable="true">
                         <input
-                        class="edit-inp"
+                           class="edit-inp"
                            type="text"
                            id="input8"
                            value="Database config"
                            disabled
                            />
                         <div class="imgs">
-                           <button class="editbtn" type="button" onclick="toggleEnable('input8')">Edit</button>
-                           <!-- <button onclick="edititem()"  class="editbutton" id="editcompleted2">
-                           Edit
-                           </button> -->
+                           <button class="editbtn" type="button" id="editbtn8" onclick="toggleEnable('input8')">Edit</button>
                            <button onclick="Deleteitem()" class="deleteitem" >
                            <img
                               width="30px"
@@ -298,7 +276,7 @@
                      </div>
                      <div class="tasktodo" id="dragtarget9" draggable="true">
                         <input
-                        class="edit-inp"
+                           class="edit-inp"
                            type="text"
                            id="input9"
                            value="Meta tags added"
@@ -306,7 +284,7 @@
                            />
                         <div>
                            <div class="imgs">
-                              <button class="editbtn" type="button" onclick="toggleEnable('input9')">Edit</button>
+                              <button class="editbtn" type="button" id="editbtn9"   onclick="toggleEnable('input9')">Edit</button>
                               <button onclick="Deleteitem()" class="deleteitem" >
                               <img
                                  width="30px"
