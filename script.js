@@ -92,7 +92,7 @@ function displayEntries() {
       row.className = 'tasktodo';
       row.innerHTML = `
       <td><input class="addnewtask" type="input" id="myInput-${index}" value="${entry.newentry}" disabled></td>
-      <td><button class="editbutton" id="editinputbtn${index}" onclick="toggleInput(${index})">Edit</button></td>
+      <td><button class="editbtn" id="editinputbtn${index}" onclick="toggleInput(${index})">Edit</button></td>
       <td><button class="deleteentry"><img width="30px" src="images/icons8-delete-100.png" alt=""></button></td>`;
       tbody.appendChild(row);
    });
