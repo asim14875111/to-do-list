@@ -16,14 +16,24 @@ function Deleteitem() {
 }
 
 function toggleEnable(id){
-   var textbox = document.getElementById(id);
-   if(textbox.disabled){
-      document.getElementById(id).disabled = false;
-   }
-   else{
 
-      document.getElementById(id).disabled = true;}
-}
+   var textbox = document.getElementById(id);
+const editbtn = document.querySelectorAll('.editbtn')
+editbtn.forEach(function(button){
+   button.addEventListener('click', function(){
+      if(textbox.disabled){
+         document.getElementById(id).disabled = false;
+         button.textContent = "Save"
+      }else{
+
+         document.getElementById(id).disabled = true;
+         button.textContent = "Edit"
+
+      }
+   })
+})
+
+   }
 
 
 
