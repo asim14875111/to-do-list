@@ -143,7 +143,7 @@ button {
 	cursor: pointer;
 }
 
-.editbutton {
+.editbtn {
 	font-family: sans-serif;
 	font-weight: 600;
 	border: 1px solid black;
@@ -432,7 +432,7 @@ input {
 }
 
 
-#first-input {
+#input1{
 	width: 120px;
 }
 
@@ -441,39 +441,39 @@ input {
 	padding-top: 30px;
 }
 
-.secondinp {
+#input2 {
 
 	width: 90px;
 
 }
 
-#editinput {
+#input3 {
 	width: 130px;
 }
 
 
-#editablefirstprogess {
+#input4 {
 	width: 130px;
 }
 
-#editablesecondprogess {
+#input5 {
 	width: 100px;
 }
 
-#editablethirdprogess {
+#input6 {
 	width: 90px;
 }
 
 
-#editableone {
+#input7 {
 	width: 100px;
 }
 
-#editabletwo {
+#input8 {
 	width: 125px;
 }
 
-#editablethree {
+#input9 {
 	width: 130px;
 }
 
