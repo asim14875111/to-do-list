@@ -13,20 +13,7 @@ function Deleteitem() {
 
 function toggleEnable(id) {
    var textbox = document.getElementById(id);
-   // const editbtn = document.querySelectorAll('.editbtn')
 
-   // editbtn.forEach(function (button) {
-   //    button.addEventListener('click', function () {
-   //       if (!textbox.disabled) {
-   //          button.innerHTML = "Save"
-
-   //          console.log('clicked')
-   //       } else {
-   //          button.innerHTML = "Edit"
-   //          console.log('clicked')
-   //       }
-   //    })
-   // })
    if (textbox.disabled) {
       document.getElementById(id).disabled = false;
    } 
